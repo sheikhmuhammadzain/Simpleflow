@@ -102,6 +102,7 @@ img{
     }
 .s-main{
     display: flex;
+    border-radius: 5px;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -110,6 +111,7 @@ img{
     section{
         display: flex;
         gap: 3rem;
+        border-radius: 10px;
         align-items: center;
         text-align: center;
         justify-content: center;
