@@ -19,20 +19,17 @@
     color: #fff;
     border: none;
     border-radius: 6px;
-}
-#signUpBtn.active {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
+    padding: 10px 45px;
 }
 
 #signInBtn {
     border: none;
     color: #c0bebe;
+    padding: 10px 45px;
 }
 .para{
     font-size: 12px;
-    margin-top: 70px;
+    margin-top: 80px;
 }
 #signUpBtn:focus, #signInBtn:focus {
     box-shadow: none;
@@ -57,7 +54,12 @@ button[type="submit"] {
 .btn-group{
     background-color: var(--secondary-color);
     border-radius: 6px;
-    padding: 3px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    button{
+        flex:1;
+    }
 }
 
 button[type="submit"]:hover {

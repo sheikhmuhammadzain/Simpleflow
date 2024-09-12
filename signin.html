@@ -14,72 +14,90 @@
     />
     <link rel="stylesheet" href="style.css" />
     <style>
-        .forgot{
-            text-align: right;
-            text-decoration: underline;
-            color: #bbbbbb;
-        }
-        p{
-            margin: 0;
-        }
-      
-        #signInBtn {
-   
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-}
-#signUpBtn{
-    border: none;
-    color: #c0bebe;
-    background: var(--secondary-color);
-}
+      .forgot {
+        text-align: right;
+        text-decoration: underline;
+        color: #bbbbbb;
+      }
+      p {
+        margin: 0;
+      }
+
+      #signInBtn {
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+      }
+      #signUpBtn {
+        border: none;
+        color: #c0bebe;
+        background: var(--secondary-color) !important;
+      }
     </style>
   </head>
   <body>
-    
     <section class="main">
       <section class="left">
         <img src="sidepic.png" alt="" />
       </section>
 
       <section class="right">
-        <div class="d-flex  align-items-center justify-content-center">
-            <div class="wrap">
-                <div class=" mb-4">
-                   <img src="logo.png" style=" width: 165px;
-                   height: 32px;
-                     ">
-                </div>
-                <div class="btn-group w-100 mb-3">
-                    <button class="btn " id="signUpBtn">Sign Up</button>
-                    <button class="btn " id="signInBtn">Sign In</button>
-                </div>
-                <form id="form">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email Id</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter Email">
-                    </div>
-                    <p class="forgot">forgot password</p>
-                    <div class="mb-3">
-                        <label for="password1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password1" placeholder="Enter Password">
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary w-100">Continue</button>
-                </form>
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="wrap">
+            <div class="mb-4">
+              <img src="logo.png" style="width: 165px; height: 32px" />
             </div>
+            <div class="btn-group w-100 mb-3">
+          <a href="index.html">
+            <button class="btn" id="signUpBtn">Sign Up</button> 
+          </a>
+                
+              
+            <a href="signin.html"><button class="btn" id="signInBtn">Sign In</button></a>
+                
+           
+            </div>
+            <form id="form">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Id</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Email"
+                />
+              </div>
+              <p class="forgot">forgot password</p>
+              <div class="mb-3">
+                <label for="password1" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password1"
+                  placeholder="Enter Password"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">
+                Continue
+              </button>
+            </form>
+          </div>
         </div>
-        <p class="text-center  para">By signing up to create an account I accept Company’s <br>
-            <strong>Terms of use & privacy policy</strong>
-        </>
+        <p class="text-center para">
+          By signing up to create an account I accept Company’s <br />
+          <strong>Terms of use & privacy policy</strong>
+        </p>
       </section>
     </section>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>s
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        window.location.href = "successfull.html";
+      });
+    </script>
   </body>
 </html>
