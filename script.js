@@ -3,7 +3,11 @@ document.getElementById('signInBtn').addEventListener('click', function() {
     document.getElementById('signUpBtn').classList.remove('active');
     document.getElementById('signInBtn').classList.add('active');
 });
-
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.querySelector('.overlay').style.display = 'none';
+    alert("Thank you for signing up!");
+});
+ 
 document.getElementById('signUpBtn').addEventListener('click', function() {
     // Change the style for Sign Up
     document.getElementById('signInBtn').classList.remove('active');
@@ -23,3 +27,4 @@ document.getElementById('form').addEventListener('submit', function(e) {
         window.location.href = "otp.html";
     }
 });
+

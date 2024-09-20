@@ -4,78 +4,163 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SimpleFlow</title>
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css" />
     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-  </head>
-  <style>
-    header{
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      header {
         height: 50px;
         background-color: var(--gray-color);
         display: flex;
         align-items: center;
         justify-content: center;
-       
-    }
-
-    .btn{
+      }
+      .btn {
         background-color: var(--primary-color);
         color: #fff;
         border-radius: 4px;
-        padding:10px 20px;
+        padding: 10px 20px;
         border: none;
-    }
-   p{
-    font-size: 14px;
-   }
-  </style>
+      }
+      p {
+        font-size: 14px;
+      }
+    </style>
+  </head>
   <body>
     <header>
       <div class="logo">
         <img src="logo.png" alt="" />
       </div>
     </header>
+<div class="upper-toggle">
+  <section class="upper-section">
+    <div>
+      <div class="mic-icon"><i class="ri-mic-line"></i></div>
+      <h2>Start Listening</h2>
+    </div>
+  </section>
+</div>
+    
+    
+    <div class="overlay">
+      <div class="popup">
+        <div class="popup-header">
+          <h2>Add patient</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="search-box">
+          <i class="ri-search-line"></i>
+          <input type="search" placeholder="Search any keyword" />
+        </div>
+        <div class="or-divider">or</div>
+        <h4>Patient Name</h4>
+        <input type="text" id="patientName" placeholder="Patient name" />
+        <h4>Patient DOB</h4>
+        <input
+          type="text"
+          id="patientDOB"
+          placeholder="Enter DOB"
+          onfocus="(this.type='date')"
+          onblur="if(this.value==''){this.type='text'}"
+        />
+        <h4>Plan</h4>
+        <input type="text" id="patientPlan" value="10-05-2024" />
+        <button class="save-btn" onclick="savePatientInfo()">Save</button>
+      </div>
+    </div>
 
-    <section class="upper-section">
-        <div>    <div class="mic-icon"><i class="ri-mic-line"></i></div>
-        <h2>Start Listening</h2></div>
-  
-    </section>
     <section class="lower-section">
       <aside class="transcript">
-        <div>  <h2>Transcript</h2>
-            <p>
-       No Data Available
-            </p></div>
-      
+        <div>
+          <h2>Transcript</h2>
+          <p id="transcriptContent">No Data Available</p>
+        </div>
         <button class="btn btn-primary">Make Summary</button>
       </aside>
       <aside class="aside-right">
         <div class="summary">
-            <h2>Summary</h2>
-            <div class="search-box">
-                <i class="ri-search-line"></i>
-                <input type="search" placeholder="Search any keyword">
-            </div>
+          <h2>Summary</h2>
+          <div class="search-box">
+            <i class="ri-search-line"></i>
+            <input type="search" placeholder="Search any keyword" />
+          </div>
         </div>
-       
-
-        <p>
-        No Data Available
-        </p>
+        <p id="summaryContent">No Data Available</p>
       </aside>
-    </aside>
-    <aside class="transcript">
-      <div>  <h2>Scratch Pad </h2>
-          <p>
-            No Data Available</p></div>
-    
-      <button class="btn btn-primary">Save Notes</button>
-    </aside>
- 
+      <aside class="transcript">
+        <div>
+          <h2>Scratch Pad</h2>
+          <p id="scratchpadContent">No Data Available</p>
+        </div>
+        <button class="btn btn-primary">Save Notes</button>
+      </aside>
     </section>
+
+    <script>
+      document
+        .querySelector(".close-btn")
+        .addEventListener("click", function () {
+          document.querySelector(".overlay").classList.toggle("active");
+        });
+let overlay = document.querySelector(".overlay");
+      document
+        .querySelector(".upper-section")
+        .addEventListener("click", function () {
+          overlay.classList.toggle("active");
+        });
+
+      function savePatientInfo() {
+        const patientName = document.getElementById("patientName").value;
+        const patientDOB = document.getElementById("patientDOB").value;
+        const patientPlan = document.getElementById("patientPlan").value;
+
+        // Update the page with the new patient information
+        // document.querySelector('.upper-section h2').textContent = patientName;
+
+        // Update the transcript section
+        document.getElementById(
+          "transcriptContent"
+        ).textContent = `Patient: ${patientName}\nDOB: ${patientDOB}\nPlan: ${patientPlan}`;
+
+        // Clear the form fields
+        document.getElementById("patientName").value = "";
+        document.getElementById("patientDOB").value = "";
+        document.getElementById("patientPlan").value = "10-05-2024";
+
+        // Close the overlay
+        overlay.classList.toggle("active");
+      }
+     document.querySelector(".save-btn").addEventListener("click", function () {
+        document.querySelector(".upper-toggle").innerHTML=`
+        <section class="upper-section stop">
+      <div class="data-section">
+        <div>
+          <h3>Patient Name</h3>
+          <p>Abdullah</p>
+        </div>
+        <div>
+          <h3>Patient DOB</h3>
+          <p>01/01/2000</p>
+        </div>
+        <div>
+          <h3>Patient Plan</h3>
+          <p>10-05-2024</p>
+        </div>
+        <div>
+          <i class="ri-edit-2-line"></i>
+        </div>
+      </div>
+      <div class="stop-listening">
+        <i class="ri-focus-line"></i>
+        <h3>Stop Listening</h3>
+      </div>
+    </section>
+        `
+
+      });
+    </script>
   </body>
 </html>
