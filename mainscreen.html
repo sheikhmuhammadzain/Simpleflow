@@ -35,16 +35,15 @@
         <img src="logo.png" alt="" />
       </div>
     </header>
-<div class="upper-toggle">
-  <section class="upper-section">
-    <div>
-      <div class="mic-icon"><i class="ri-mic-line"></i></div>
-      <h2>Start Listening</h2>
+    <div class="upper-toggle">
+      <section class="upper-section">
+        <div>
+          <div class="mic-icon"><i class="ri-mic-line"></i></div>
+          <h2>Start Listening</h2>
+        </div>
+      </section>
     </div>
-  </section>
-</div>
-    
-    
+
     <div class="overlay">
       <div class="popup">
         <div class="popup-header">
@@ -100,12 +99,15 @@
     </section>
 
     <script>
+      const summaryContent = document.getElementById("summaryContent");
+      const scratchpadContent = document.getElementById("scratchpadContent");
+
       document
         .querySelector(".close-btn")
         .addEventListener("click", function () {
           document.querySelector(".overlay").classList.toggle("active");
         });
-let overlay = document.querySelector(".overlay");
+      let overlay = document.querySelector(".overlay");
       document
         .querySelector(".upper-section")
         .addEventListener("click", function () {
@@ -116,14 +118,61 @@ let overlay = document.querySelector(".overlay");
         const patientName = document.getElementById("patientName").value;
         const patientDOB = document.getElementById("patientDOB").value;
         const patientPlan = document.getElementById("patientPlan").value;
-
+summaryContent.textContent = `Conducted in Doha, Qatar on Canadian Servers. Hence the slow responses at times. This can easily be alleviated once we establish local servers. This can be conducted in Arabic (all dialects), French, Hindi (beta phase) among other languages. Would love to provide you with an in-person demo to truly see its benefit.`
+scratchpadContent.textContent = `Conducted in Doha, Qatar on Canadian Servers. Hence the slow responses at times. This can easily be alleviated once we establish local servers. This can be conducted in Arabic (all dialects), French, Hindi (beta phase) among other languages. Would love to provide you with an in-person demo to truly see its benefit.`
         // Update the page with the new patient information
         // document.querySelector('.upper-section h2').textContent = patientName;
 
         // Update the transcript section
-        document.getElementById(
-          "transcriptContent"
-        ).textContent = `Patient: ${patientName}\nDOB: ${patientDOB}\nPlan: ${patientPlan}`;
+        document.getElementById("transcriptContent").textContent = `1:21
+            throughout the conversation for example
+            1:24
+            if the patient is morbidly obese or if
+            1:25
+            the patient has suspected cancer it
+            1:27
+            allows you to be able to write that
+            1:28
+            stuff down if it's information without
+            1:30
+            saying it out loud and so I'm going to
+            1:32
+            kind of go ahead and show you
+            1:35
+            here uh like we said you know if it were
+            1:38
+            integrated there would be like khif at
+            1:39
+            9:00 P p.m or 9:00 am or whatever but
+            1:42
+            you know just for the interest we're
+            1:43`;
+
+        document.querySelector(".upper-toggle").innerHTML = `
+        <section class="upper-section stop">
+      <div class="data-section">
+        <div>
+          <h3>Patient Name</h3>
+          <p>${patientName}</p>
+        </div>
+        <div>
+          <h3>Patient DOB</h3>
+          <p>${patientDOB}</p>
+        </div>
+        <div>
+          <h3>Patient Plan</h3>
+          <p>${patientDOB}</p>
+        </div>
+        <div>
+          <i class="ri-edit-2-line"></i>
+        </div>
+      </div>
+      <div class="stop-listening">
+        <i class="ri-focus-line"></i>
+      <a href="mainscreen.html">  <h3>Stop Listening</h3></a>
+      </div>
+    </section>
+        `;
 
         // Clear the form fields
         document.getElementById("patientName").value = "";
@@ -133,34 +182,9 @@ let overlay = document.querySelector(".overlay");
         // Close the overlay
         overlay.classList.toggle("active");
       }
-     document.querySelector(".save-btn").addEventListener("click", function () {
-        document.querySelector(".upper-toggle").innerHTML=`
-        <section class="upper-section stop">
-      <div class="data-section">
-        <div>
-          <h3>Patient Name</h3>
-          <p>Abdullah</p>
-        </div>
-        <div>
-          <h3>Patient DOB</h3>
-          <p>01/01/2000</p>
-        </div>
-        <div>
-          <h3>Patient Plan</h3>
-          <p>10-05-2024</p>
-        </div>
-        <div>
-          <i class="ri-edit-2-line"></i>
-        </div>
-      </div>
-      <div class="stop-listening">
-        <i class="ri-focus-line"></i>
-        <h3>Stop Listening</h3>
-      </div>
-    </section>
-        `
-
-      });
+      document
+        .querySelector(".save-btn")
+        .addEventListener("click", function () {});
     </script>
   </body>
 </html>

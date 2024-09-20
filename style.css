@@ -4,7 +4,11 @@
   box-sizing: border-box;
   font-family: "false", sans-serif;
 }
-
+a{
+  
+  text-decoration: none;
+  color: inherit;
+}
 :root {
   --primary-color: #465ff1;
   --secondary-color: #ecf0ff;
