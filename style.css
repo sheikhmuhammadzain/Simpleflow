@@ -310,3 +310,9 @@ inset: 0;
   text-align: center;
  
 }
+@media  screen and (max-width: 768px) {
+  .stop-listening{
+    min-width: 0;
+  }
+  
+}
