@@ -18,15 +18,25 @@
         justify-content: center;
       }
       .btn {
-        background-color: var(--primary-color);
-        color: #fff;
+        border: none;
+        background: transparent;
+        font-weight: bold;
+        color: var(--primary-color);
         border-radius: 10px;
         padding: 10px 30px;
         border: none;
-        font-size: 16px;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+      }
+      .btn.active {
+        background-color: var(--primary-color);
+        color: #fff;
       }
       p {
-        font-size: 16px;
+        font-size: 13px;
       }
     </style>
   </head>
@@ -76,63 +86,133 @@
       <aside class="transcript">
         <div class="t-heading">
           <h2>Transcript</h2>
-          <button class="btn btn-primary">Make Summary</button>
+          <button class="s-btn">Make Summary</button>
         </div>
-       <div class="p-wrapper"> 
-        <div class="p-heading">
-          <h3>Patient</h3>
-          <p>01:22</p>
+        <div class="p-wrapper">
+          <div class="p-heading">
+            <h3>Patient</h3>
+            <p>01:22</p>
+          </div>
+          <div>
+            <p>
+              Throughout the conversation for example if the patient is morbidly
+              obese or ifthe patient has suspected cancer ita llows you to be
+              able to write that throughout the conversation for example if the
+              patient is morbidly obese or ifthe patient has suspected cancer
+              ita llows you to be able to write that.
+            </p>
+          </div>
         </div>
-        <div>
-          <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
+        <div class="d-wrapper">
+          <div class="p-heading">
+            <h3>Doctor</h3>
+            <p>01:22</p>
+          </div>
+          <div>
+            <p>
+              Throughout the conversation for example if the patient is morbidly
+              obese or ifthe patient has suspected cancer ita llows you to be
+              able to write
+            </p>
+          </div>
         </div>
-       </div>
-       <div class="d-wrapper"> 
-        <div class="p-heading">
-          <h3>Doctor</h3>
-          <p>01:22</p>
+        <div class="p-wrapper">
+          <div class="p-heading">
+            <h3>Patient</h3>
+            <p>01:22</p>
+          </div>
+          <div>
+            <p>
+              Throughout the conversation for example if the patient is morbidly
+              obese or ifthe patient has suspected cancer ita llows you to be
+              able to write that throughout the conversation for example if the
+              patient is morbidly obese or ifthe patient has suspected cancer
+              ita llows you to be able to write that.
+            </p>
+          </div>
         </div>
-        <div>
-          <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write</p>
+        <div class="d-wrapper">
+          <div class="p-heading">
+            <h3>Doctor</h3>
+            <p>01:22</p>
+          </div>
+          <div>
+            <p>
+              Throughout the conversation for example if the patient is morbidly
+              obese or ifthe patient has suspected cancer ita llows you to be
+              able to write
+            </p>
+          </div>
         </div>
-       </div>
-       <div class="p-wrapper"> 
-        <div class="p-heading">
-          <h3>Patient</h3>
-          <p>01:22</p>
-        </div>
-        <div>
-          <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
-        </div>
-       </div>
-       <div class="d-wrapper"> 
-        <div class="p-heading">
-          <h3>Doctor</h3>
-          <p>01:22</p>
-        </div>
-        <div>
-          <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write</p>
-        </div>
-       </div>
       </aside>
       <aside class="aside-right">
         <div class="summary">
           <div class="summary-btns border">
-            <button class="btn btn-primary">Summary</button>
-            <button class="btn btn-primary">Scratchpad</button>
-            <button class="btn btn-primary">Notes</button>
+            <button class="btn active">Summary</button>
+            <button class="btn">Scratchpad</button>
+            <button class="btn">Notes</button>
           </div>
-          <div class="search-box">
+          <!-- <div class="search-box">
             <i class="ri-search-line"></i>
             <input type="search" placeholder="Search any keyword" />
           </div>
         </div>
-        <p id="summaryContent">No Data Available</p>
-      </aside>
+        <div class="p-wrapper">
+          <div class="p-heading">
+            <h3>Patient</h3>
+            <p>01:22</p>
+          </div>
+          <div>
+            <p>
+              Throughout the conversation for example if the patient is morbidly
+              obese or ifthe patient has suspected cancer ita llows you to be
+              able to write that throughout the conversation for example if the
+              patient is morbidly obese or ifthe patient has suspected cancer
+              ita llows you to be able to write that.
+            </p>
+          </div>
+        </div>
+        <div class="p-wrapper">
+          <div class="p-heading">
+            <h3>Patient</h3>
+            <p>01:22</p>
+          </div>
+          <div>
+            <p>
+              Throughout the conversation for example if the patient is morbidly
+              obese or ifthe patient has suspected cancer ita llows you to be
+              able to write that throughout the conversation for example if the
+              patient is morbidly obese or ifthe patient has suspected cancer
+              ita llows you to be able to write that.
+            </p>
+          </div>
+        </div> -->
+        <div class="border scratch-para">
+          <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
 
+        </div>
+        <div class="flex">
+          <button class="s-btn submit-btn"> Submit</button>
+        </div>
+        
+
+      </aside>
     </section>
 
     <script>
+      const btns = document.querySelectorAll(".btn");
+      btns.forEach((btn) =>
+    { 
+    
+      btn.addEventListener("click", function () {
+          btns.forEach(btn=>btn.classList.remove('active'))     
+          btn.classList.toggle("active");
+          
+          
+        })
+    }
+       
+      );
       const summaryContent = document.getElementById("summaryContent");
       const scratchpadContent = document.getElementById("scratchpadContent");
 
@@ -161,7 +241,7 @@
         // document.getElementById("transcriptContent").textContent = `1:21
         //     throughout the conversation for example
         //     1:24
-        //     if the patient is morbidly obese or if 
+        //     if the patient is morbidly obese or if
         //     1:25
         //     the patient has suspected cancer it
         //     1:27

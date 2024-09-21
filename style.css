@@ -192,6 +192,7 @@ img {
   border-radius: 20px;
   input {
     border: none;
+    background-color: var(--gray-color);
     outline: none;
   }
 }
@@ -341,6 +342,7 @@ margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 10px;
+  margin-bottom: 10px;
   h3{
     color: var(--primary-color);
   }
@@ -355,9 +357,33 @@ margin-bottom: 10px;
 .summary-btns{
 display: flex;
 border-radius: 20px;
-gap: 10px;
-align-items: center;
+  align-items: center;
 button{
   flex: 1;
 }
+}
+.s-btn{
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.scratch-para{
+  background-color: var(--gray-color);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+
+}
+.submit-btn{
+  max-width: fit-content;
+  text-align: center;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
