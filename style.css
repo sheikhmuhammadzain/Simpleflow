@@ -387,3 +387,17 @@ button{
   align-items: center;
   justify-content: center;
 }
+.s-heading{
+  display: flex;
+  align-items: center;
+gap: 22px;
+justify-content: space-between;
+}
+select{
+  flex: 1;
+  margin-right: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background-color:var(--gray-color);
+}
