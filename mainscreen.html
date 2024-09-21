@@ -149,15 +149,15 @@
         <div class="summary">
           <div class="summary-btns border">
             <button class="btn active">Summary</button>
-            <button class="btn">Scratchpad</button>
-            <button class="btn">Notes</button>
+            <button class="btn scratch-btn">Scratchpad</button>
+            <button class="btn scratch-btn">Notes</button>
           </div>
-          <!-- <div class="search-box">
+          <div class="search-box">
             <i class="ri-search-line"></i>
             <input type="search" placeholder="Search any keyword" />
           </div>
         </div>
-        <div class="p-wrapper">
+        <div id="para">  <div class="p-wrapper">
           <div class="p-heading">
             <h3>Patient</h3>
             <p>01:22</p>
@@ -186,15 +186,20 @@
               ita llows you to be able to write that.
             </p>
           </div>
-        </div> -->
-        <div class="border scratch-para">
-          <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
+      
+        </div></div>
+      
+<!-- <div id="para">
+  <div class="border scratch-para">
+    <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
 
-        </div>
-        <div class="flex">
-          <button class="s-btn submit-btn"> Submit</button>
-        </div>
-        
+  </div>
+  <div class="flex">
+    <button class="s-btn submit-btn"> Submit</button>
+  </div>
+  
+</div>
+        -->
 
       </aside>
     </section>
@@ -299,6 +304,22 @@
       document
         .querySelector(".save-btn")
         .addEventListener("click", function () {});
+
+
+       const scratchBtns = document.querySelectorAll('.scratch-btn')
+
+       scratchBtns.forEach(scratchBtn => {
+        scratchBtn.addEventListener('click', function() {
+        document.getElementById('para').innerHTML = ` <div class="border scratch-para">
+          <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
+
+        </div>
+        <div class="flex">
+          <button class="s-btn submit-btn"> Submit</button>
+        </div>
+        `
+        })
+       })
     </script>
   </body>
 </html>
