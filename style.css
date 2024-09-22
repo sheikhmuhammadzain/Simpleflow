@@ -237,6 +237,7 @@ margin-bottom: 20px;
   margin: 0;
   font-size: 18px;
   text-align: center;
+  min-width: fit-content;
 }
 .close-btn {
   background: none;
@@ -292,6 +293,12 @@ inset: 0;
 
   }
  
+}
+@media screen and (max-width: 768px) {
+  .popup{
+    width: 90%;
+  }
+  
 }
 .overlay.active{
  display: block;
@@ -400,4 +407,43 @@ select{
   border-radius: 20px;
   border: 1px solid #ddd;
   background-color:var(--gray-color);
+  color: var(--primary-color);
+}
+.stop-listening{
+  position: relative;
+
+  img{
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--primary-color);
+    padding: 4px;
+border-radius: 50%;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   select{
+  max-width: fit-content;
+  position: absolute;
+    top: 0px;
+    right: 0px;
+  border: none;
+ }
+ @media screen and (max-width: 768px) {
+  select{
+    margin-right: 0;
+    flex-wrap: wrap;
+    font-size: 0;
+  
+    background-color: transparent;
+  }
+  
+    font-size: 10px;
+
+  
+ }
+}
+.vector{
+  justify-self: flex-end;
+
 }
