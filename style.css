@@ -441,3 +441,12 @@ select {
     font-size: 12px;
   }
 }
+@media screen and (max-width: 429px) {
+  .upper-section.stop{
+    flex-direction: column;
+  }
+  .stop-listening{
+padding: 10px;
+width: 100%;
+  }
+}
