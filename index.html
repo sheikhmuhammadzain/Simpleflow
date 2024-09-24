@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up Form</title>
+    <title>Login and Sign Up</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,11 +13,51 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+  
+      .para {
+        margin-top: 163px;
+      }
+      .forgot {
+        text-align: right;
+        text-decoration: underline;
+        color: #bbbbbb;
+      }
+      p {
+        margin: 0;
+      }
+body {
+background-color: #fff;
+overflow: hidden;
+}
+      #signInBtn.active, #signUpBtn.active {
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+      }
+      #signInBtn {
+        border: none;
+        color: #c0bebe;
+        background: var(--secondary-color);
+      }
+      #signUpBtn {
+        border: none;
+        color: #c0bebe;
+        background: var(--secondary-color);
+      }
+      #signInForm, #signUpForm {
+        display: none;
+      }
+      #signInForm.active, #signUpForm.active {
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <section class="main">
       <section class="left">
-        <img src="sidepic.png" alt="" />
+        <img src="sidepic.png" alt="Side Image" />
       </section>
 
       <section class="right">
@@ -26,22 +66,46 @@
             <div class="mb-4">
               <img src="logo.png" style="width: 130px" />
             </div>
-            <div class="btn-group w-100 mb-3">
-              <a href="index.html"
-                ><button class="btn" id="signUpBtn">Sign Up</button></a
-              >
 
-              <a href="signin.html"
-                ><button class="btn" id="signInBtn">Sign In</button></a
-              >
+            <div class="btn-group w-100 mb-3">
+              <button class="btn active" id="signInBtn">Sign In</button>
+              <button class="btn" id="signUpBtn">Sign Up</button>
             </div>
-            <form id="form">
+
+            <!-- Sign In Form -->
+            <form id="signInForm" class="active">
               <div class="mb-3">
-                <label for="email" class="form-label">Email Id</label>
+                <label for="emailSignIn" class="form-label">Email Id</label>
                 <input
                   type="email"
                   class="form-control"
-                  id="email"
+                  id="emailSignIn"
+                  placeholder="Enter Email"
+                />
+              </div>
+              <p class="forgot">Forgot password?</p>
+              <div class="mb-3">
+                <label for="passwordSignIn" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordSignIn"
+                  placeholder="Enter Password"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Continue
+              </button>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signUpForm">
+              <div class="mb-3">
+                <label for="emailSignUp" class="form-label">Email Id</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailSignUp"
                   placeholder="Enter Email"
                 />
               </div>
@@ -55,30 +119,67 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="password2" class="form-label">Password</label>
+                <label for="password2" class="form-label">Confirm Password</label>
                 <input
                   type="password"
                   class="form-control"
                   id="password2"
-                  placeholder="Enter Password"
+                  placeholder="Confirm Password"
                 />
               </div>
-             
+              <button type="submit" class="btn btn-primary w-100">
+                Create Account
+              </button>
             </form>
-            <a href="otp.html"><button class="btn btn-primary w-100">
-              Create Account
-            </button>
-            </a>
           </div>
         </div>
-        <p class="text-center para">
-          By signing up to create an account I accept Company’s <br />
+        <p class="text-center para bottom-p">
+          By signing up to create an account, I accept Company’s <br />
           <strong>Terms of use & privacy policy</strong>
         </p>
       </section>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+      // Toggle between Sign In and Sign Up forms
+      const signInBtn = document.getElementById('signInBtn');
+      const signUpBtn = document.getElementById('signUpBtn');
+      const signInForm = document.getElementById('signInForm');
+      const signUpForm = document.getElementById('signUpForm');
+
+      signInBtn.addEventListener('click', function () {
+        signInBtn.classList.add('active');
+        signUpBtn.classList.remove('active');
+        signInForm.classList.add('active');
+        signUpForm.classList.remove('active');
+      });
+
+      signUpBtn.addEventListener('click', function () {
+        signUpBtn.classList.add('active');
+        signInBtn.classList.remove('active');
+        signUpForm.classList.add('active');
+        signInForm.classList.remove('active');
+      });
+
+      // Form submission handling
+      document.getElementById("signInForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Sign In successful");
+        window.location.href = "successfull.html";
+      });
+
+      document.getElementById("signUpForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const password1 = document.getElementById("password1").value;
+        const password2 = document.getElementById("password2").value;
+        if (password1 !== password2) {
+          alert("Passwords do not match!");
+        } else {
+          alert("Sign Up successful");
+          window.location.href = "otp.html";
+        }
+      });
+    </script>
   </body>
 </html>

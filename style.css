@@ -20,13 +20,7 @@ a {
 .card {
   border-radius: 12px;
 }
-#signUpBtn {
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 45px;
-}
+
 button{
   cursor: pointer;
 }
@@ -81,6 +75,10 @@ img {
 .left {
   height: 100vh;
   padding: 1rem;
+  margin-bottom: 9pc;
+}
+.bottom-p{
+  margin-bottom: 100px;
 }
 .main {
   display: flex;
