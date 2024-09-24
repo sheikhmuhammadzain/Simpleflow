@@ -54,7 +54,6 @@
         </div>
       </section>
     </div>
-   
 
     <div class="overlay">
       <div class="popup">
@@ -149,23 +148,87 @@
       <aside class="aside-right">
         <div class="summary">
           <div class="summary-btns border">
-            <button class="btn active">Summary</button>
+            <button class="btn active" id="summary-btn">Summary</button>
             <button class="btn scratch-btn">Scratchpad</button>
             <button class="btn scratch-btn">Notes</button>
           </div>
-          <div class="s-heading">
-            <h1>Start Dictation </h1>
-            <select name="Soap Notes" id="">
-              <option value="">Soap Notes</option>
-              <option value="">Soap Value</option>
-            </select>
-          </div>
-          <div class="search-box">
-            <i class="ri-search-line"></i>
-            <input type="search" placeholder="Search any keyword" />
+          <div class="summary-content" id="summaryContent">
+            <div class="s-heading">
+              <h1>Start Dictation</h1>
+              <select name="Soap Notes" id="">
+                <option value="">Soap Notes</option>
+                <option value="">Soap Value</option>
+              </select>
+            </div>
+            <div class="search-box">
+              <i class="ri-search-line"></i>
+              <input type="search" placeholder="Search any keyword" />
+            </div>
           </div>
         </div>
-        <div id="para">  <div class="p-wrapper">
+        <div id="para">
+          <div class="p-wrapper">
+            <div class="p-heading">
+              <h3>Patient</h3>
+              <p>01:22</p>
+            </div>
+            <div>
+              <p>
+                Throughout the conversation for example if the patient is
+                morbidly obese or ifthe patient has suspected cancer ita llows
+                you to be able to write that throughout the conversation for
+                example if the patient is morbidly obese or ifthe patient has
+                suspected cancer ita llows you to be able to write that.
+              </p>
+            </div>
+          </div>
+          <div class="p-wrapper">
+            <div class="p-heading">
+              <h3>Patient</h3>
+              <p>01:22</p>
+            </div>
+            <div>
+              <p>
+                Throughout the conversation for example if the patient is
+                morbidly obese or ifthe patient has suspected cancer ita llows
+                you to be able to write that throughout the conversation for
+                example if the patient is morbidly obese or ifthe patient has
+                suspected cancer ita llows you to be able to write that.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div id="para">
+  <div class="border scratch-para">
+    <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
+
+  </div>
+  <div class="flex">
+    <button class="s-btn submit-btn"> Submit</button>
+  </div>
+  
+</div>
+        -->
+      </aside>
+    </section>
+
+    <script>
+      const btns = document.querySelectorAll(".btn");
+      btns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          btns.forEach((btn) => btn.classList.remove("active"));
+          btn.classList.toggle("active");
+        });
+      });
+      const summaryContent = document.getElementById("summaryContent");
+      const scratchpadContent = document.getElementById("scratchpadContent");
+      const summaryBtn = document.getElementById("summary-btn");
+
+      summaryBtn.addEventListener("click", function () {
+        document.getElementById("para").innerHTML = `
+ 
+ <div class="p-wrapper">
           <div class="p-heading">
             <h3>Patient</h3>
             <p>01:22</p>
@@ -195,40 +258,13 @@
             </p>
           </div>
       
-        </div></div>
-      
-<!-- <div id="para">
-  <div class="border scratch-para">
-    <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
+        </div>
+ 
+ `;
+ summary.style.display = "block";
+      });
 
-  </div>
-  <div class="flex">
-    <button class="s-btn submit-btn"> Submit</button>
-  </div>
-  
-</div>
-        -->
-
-      </aside>
-    </section>
-
-    <script>
-      const btns = document.querySelectorAll(".btn");
-      btns.forEach((btn) =>
-    { 
-    
-      btn.addEventListener("click", function () {
-          btns.forEach(btn=>btn.classList.remove('active'))     
-          btn.classList.toggle("active");
-          
-          
-        })
-    }
-       
-      );
-      const summaryContent = document.getElementById("summaryContent");
-      const scratchpadContent = document.getElementById("scratchpadContent");
-
+      const summary = document.querySelector(".summary-content");
       document
         .querySelector(".close-btn")
         .addEventListener("click", function () {
@@ -321,12 +357,13 @@
         .querySelector(".save-btn")
         .addEventListener("click", function () {});
 
+      const scratchBtns = document.querySelectorAll(".scratch-btn");
 
-       const scratchBtns = document.querySelectorAll('.scratch-btn')
-
-       scratchBtns.forEach(scratchBtn => {
-        scratchBtn.addEventListener('click', function() {
-        document.getElementById('para').innerHTML = ` <div class="border scratch-para">
+      scratchBtns.forEach((scratchBtn) => {
+        scratchBtn.addEventListener("click", function () {
+          document.getElementById(
+            "para"
+          ).innerHTML = ` <div class="border scratch-para">
           <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
 
         </div>
@@ -334,8 +371,9 @@
           <button class="s-btn submit-btn"> Submit</button>
         </div>
         `
-        })
-       })
+        summary.style.display = "none";
+        });
+      });
     </script>
   </body>
 </html>
