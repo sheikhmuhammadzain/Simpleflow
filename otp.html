@@ -14,6 +14,57 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+  <style>
+    body{
+      overflow: hidden;
+      background-color: #fff;
+    }
+  
+    p {
+      margin: 0;
+      color: var();
+    }
+    a{
+      text-decoration: none;
+      color: blue;
+
+    }
+    .main{
+      display: flex;
+      border-radius: 5px;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      gap: 9rem;
+      padding: 20px;
+    }
+    .logo{
+      width: 190px;
+    }
+    .right{
+      display: flex;
+      gap: 20px;
+min-width: 30%; 
+@media screen and (max-width: 768px) {
+  min-width: 100%;
+  
+}
+flex: 0;
+      flex-direction: column;
+      button{
+        padding: 10px 70px;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+
+      }
+      h1{
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+  </style>
   <body>
     
     <section class="main">
@@ -22,24 +73,21 @@
       </section>
 
       <section class="right">
-        <div class="d-flex  align-items-center justify-content-center">
-            <div class="wrap">
-                <i class="fa-solid fa-arrow-left"></i>
-                <div class=" mb-4">
-                   <h4 class="fw-bold mt-2">Text Here</h4>
-                </div>
-                
-                <form id="form">
-                  
-                    <div class="mb-3">
-                        <label for="password1" class="form-label">Enter Code</label>
-                        <input type="password" class="form-control" id="password1" placeholder="Enter Code">
-                    </div>
-                    <button type="submit"  class="btn btn-primary w-100">Continue</button>
-                </form>
-            </div>
-        </div>
-     
+        <div class="logo"><img src="logo.png" alt=""></div>
+        <i class="fa-solid fa-arrow-left"></i>
+<div>
+  <h1>We've sent you a confirmation email to get started.</h3>
+    <p>This is to help verify your identity.</p>
+</div>
+       
+
+       <form action="" id="form">
+        <label class="mb-3" for="Enter Code"> Enter Code</label>
+        <input type="text" name="" id="">
+        <p class="mb-3">Didn't get the code? <a href="#">Click to Resend</a></p>
+
+        <button class="btn btn-primary" type="submit">Continue</button>
+       </form>
       </section>
     </section>
 
