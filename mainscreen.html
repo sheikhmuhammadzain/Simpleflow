@@ -23,9 +23,7 @@
         align-items: center;
         justify-content: space-between;
         padding-inline: 20px;
-       img{
-        
-       }
+      
       }
       .dropdown-toggle{
         background-color: #fff;
@@ -35,7 +33,7 @@
         justify-content: space-between;
         gap: 20px;
         padding: 5px 10px;
-        border-radius: 20px ;
+        border-radius: 100px ;
       }
       .dropdown-menu {
         width: 250px;
@@ -121,11 +119,19 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="profileDropdown">
           <!-- Profile Info -->
-          <li class="text-center">
-            <strong>Jhonson</strong><br />
-            <small>Jhon@gmail.com</small>
+          <li class="text-center d-flex gap-2 ">
+            <img
+            src="https://randomuser.me/api/portraits/men/1.jpg"
+            alt=""
+            class="profile"
+          />
+         
+          <div class="d-flex flex-column justify-content-lg-start"><strong class="text-capitalize ">Jhonson <br></strong>
+            <small>Jhon@gmail.com</small></div>
+            
             <hr />
           </li>
+        
           <!-- Options -->
           <li>
             <a class="dropdown-item" href="#">
@@ -201,7 +207,7 @@
     <div class="overlay">
       <div class="popup">
         <div class="popup-header">
-          <h2>Add patient</h2>
+          <h2>Add Client</h2>
           <button class="close-btn">&times;</button>
         </div>
         <div class="search-box">
@@ -209,19 +215,19 @@
           <input type="search" placeholder="Search any keyword" />
         </div>
         <div class="or-divider">or</div>
-        <h4>Patient Name</h4>
-        <input type="text" id="patientName" placeholder="Patient name" />
-        <h4>Patient DOB</h4>
+        <h4>Client Name</h4>
+        <input type="text" id="ClientName" placeholder="Client name" />
+        <h4>Client DOB</h4>
         <input
           type="text"
-          id="patientDOB"
+          id="ClientDOB"
           placeholder="Enter DOB"
           onfocus="(this.type='date')"
           onblur="if(this.value==''){this.type='text'}"
         />
         <h4>Plan</h4>
-        <input type="text" id="patientPlan" value="10-05-2024" />
-        <button class="save-btn" onclick="savePatientInfo()">Save</button>
+        <input type="text" id="ClientPlan" value="10-05-2024" />
+        <button class="save-btn" onclick="saveClientInfo()">Save</button>
       </div>
     </div>
 
@@ -236,10 +242,10 @@
           </div>
           <div>
             <p>
-              Throughout the conversation for example if the patient is morbidly
-              obese or ifthe patient has suspected cancer ita llows you to be
+              Throughout the conversation for example if the Client is morbidly
+              obese or ifthe Client has suspected cancer ita llows you to be
               able to write that throughout the conversation for example if the
-              patient is morbidly obese or ifthe patient has suspected cancer
+              Client is morbidly obese or ifthe Client has suspected cancer
               ita llows you to be able to write that.
             </p>
           </div>
@@ -249,8 +255,8 @@
           </div>
           <div>
             <p>
-              Throughout the conversation for example if the patient is morbidly
-              obese or ifthe patient has suspected cancer ita llows you to be
+              Throughout the conversation for example if the Client is morbidly
+              obese or ifthe Client has suspected cancer ita llows you to be
               able to write
             </p>
           </div>
@@ -260,10 +266,10 @@
           </div>
           <div>
             <p>
-              Throughout the conversation for example if the patient is morbidly
-              obese or ifthe patient has suspected cancer ita llows you to be
+              Throughout the conversation for example if the Client is morbidly
+              obese or ifthe Client has suspected cancer ita llows you to be
               able to write that throughout the conversation for example if the
-              patient is morbidly obese or ifthe patient has suspected cancer
+              Client is morbidly obese or ifthe Client has suspected cancer
               ita llows you to be able to write that.
             </p>
           </div>
@@ -273,8 +279,8 @@
           </div>
           <div>
             <p>
-              Throughout the conversation for example if the patient is morbidly
-              obese or ifthe patient has suspected cancer ita llows you to be
+              Throughout the conversation for example if the Client is morbidly
+              obese or ifthe Client has suspected cancer ita llows you to be
               able to write
             </p>
           </div>
@@ -307,10 +313,10 @@
             </div>
             <div>
               <p>
-                Throughout the conversation for example if the patient is
-                morbidly obese or ifthe patient has suspected cancer ita llows
+                Throughout the conversation for example if the Client is
+                morbidly obese or ifthe Client has suspected cancer ita llows
                 you to be able to write that throughout the conversation for
-                example if the patient is morbidly obese or ifthe patient has
+                example if the Client is morbidly obese or ifthe Client has
                 suspected cancer ita llows you to be able to write that.
               </p>
             </div>
@@ -320,10 +326,10 @@
             </div>
             <div>
               <p>
-                Throughout the conversation for example if the patient is
-                morbidly obese or ifthe patient has suspected cancer ita llows
+                Throughout the conversation for example if the Client is
+                morbidly obese or ifthe Client has suspected cancer ita llows
                 you to be able to write that throughout the conversation for
-                example if the patient is morbidly obese or ifthe patient has
+                example if the Client is morbidly obese or ifthe Client has
                 suspected cancer ita llows you to be able to write that.
               </p>
             </div>
@@ -332,7 +338,7 @@
 
         <!-- <div id="para">
   <div class="border scratch-para">
-    <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
+    <p>Throughout the conversation for example if the Client is morbidly obese or ifthe Client has suspected cancer ita llows you to be able to write that throughout the conversation for example if the Client is morbidly obese or ifthe Client has suspected cancer ita llows you to be able to write that.</p>
 
   </div>
   <div class="flex">
@@ -358,8 +364,6 @@ sideLinks.forEach((link) => {
 
 
 
-
-
       // Function to toggle active class on buttons
       function toggleActiveClass(buttons) {
         buttons.forEach((btn) =>
@@ -377,14 +381,14 @@ sideLinks.forEach((link) => {
             <div class="p-heading">
             </div>
             <div>
-              <p>Throughout the conversation, the patient details can be recorded here...</p>
+              <p>Throughout the conversation, the Client details can be recorded here...</p>
             </div>
           </div>
           <div class="p-wrapper">
             <div class="p-heading">
             </div>
             <div>
-              <p>Throughout the conversation, additional patient details can be added...</p>
+              <p>Throughout the conversation, additional Client details can be added...</p>
             </div>
           </div>`;
         document.querySelector(".summary-content").style.display = "block";
@@ -400,29 +404,29 @@ sideLinks.forEach((link) => {
         document.querySelector(".overlay").classList.toggle("active");
       }
 
-      // Function to save patient information
-      let savedPatientData = {}; // Store the patient data globally
+      // Function to save Client information
+      let savedClientData = {}; // Store the Client data globally
 
-      // Function to save patient information
-      function savePatientInfo() {
-        const patientName = document.getElementById("patientName").value;
-        const patientDOB = document.getElementById("patientDOB").value;
-        const patientPlan = document.getElementById("patientPlan").value;
+      // Function to save Client information
+      function saveClientInfo() {
+        const ClientName = document.getElementById("ClientName").value;
+        const ClientDOB = document.getElementById("ClientDOB").value;
+        const ClientPlan = document.getElementById("ClientPlan").value;
 
         // Store the data globally
-        savedPatientData = {
-          name: patientName,
-          dob: patientDOB,
-          plan: patientPlan,
+        savedClientData = {
+          name: ClientName,
+          dob: ClientDOB,
+          plan: ClientPlan,
         };
 
-        // Update the page with the new patient information
+        // Update the page with the new Client information
         document.querySelector(".upper-toggle").innerHTML = `
     <section class="upper-section stop">
       <div class="data-section">
-        <div><h3>Patient Name</h3><p>${patientName}</p></div>
-        <div><h3>Patient DOB</h3><p>${patientDOB}</p></div>
-        <div><h3>Patient Plan</h3><p>${patientPlan}</p></div>
+        <div><h3>Client Name</h3><p>${ClientName}</p></div>
+        <div><h3>Client DOB</h3><p>${ClientDOB}</p></div>
+        <div><h3>Client Plan</h3><p>${ClientPlan}</p></div>
         <div><i class="ri-edit-2-line"></i></div>
       </div>
       <div class="stop-listening" id="stop-listening" onClick="stopListening()">
@@ -443,15 +447,15 @@ sideLinks.forEach((link) => {
 
       // Function to stop listening
       function stopListening() {
-        // Re-render the upper section with the same patient data
+        // Re-render the upper section with the same Client data
         document.querySelector(".upper-toggle").innerHTML = `
-          <section class="upper-section white">
-            <div>
-              <div class="mic-icon"><i class="ri-mic-line"></i></div>
-              <h2>Start Listening</h2>
-            </div>
-           
-          </section>`;
+         <section class="upper-section white">
+        <div>
+          <div class="mic-icon"><i class="ri-mic-line"></i></div>
+          <h2 class="fw-bold">Start Listening</h>
+        </div>
+      </section>`;
+      document.querySelector(".upper-section").addEventListener("click", toggleOverlay);
       }
       function toggleSidebar(){
         document.querySelector(".sidebar").classList.toggle("active");
@@ -462,7 +466,7 @@ sideLinks.forEach((link) => {
       function displayScratchpadContent() {
         document.getElementById("para").innerHTML = `
           <div class="border scratch-para">
-            <p>Details about the patient's conditions can be added here.</p>
+            <p>Details about the Client's conditions can be added here.</p>
           </div>
           <div class="flex">
             <button class="s-btn submit-btn">Submit</button>
@@ -497,10 +501,10 @@ sideLinks.forEach((link) => {
           btn.addEventListener("click", displayScratchpadContent)
         );
 
-        // Add event listener for saving patient information
+        // Add event listener for saving Client information
         document
           .querySelector(".save-btn")
-          .addEventListener("click", savePatientInfo);
+          .addEventListener("click", saveClientInfo);
       });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
