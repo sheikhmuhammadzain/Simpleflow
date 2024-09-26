@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SimpleFlow</title>
+    <title>Vocalize</title>
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
@@ -23,12 +24,24 @@
         justify-content: space-between;
         padding-inline: 20px;
        img{
-        margin-left: 50px;
+        
        }
+      }
+      .dropdown-toggle{
+        background-color: #fff;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 5px 10px;
+        border-radius: 20px ;
       }
       .dropdown-menu {
         width: 250px;
         padding: 15px;
+        border-radius: 10px;
+        background-color: white;
       }
       .dropdown-item {
         display: flex;
@@ -74,7 +87,11 @@
         font-size: calc(0.9rem + 0.6vw);
         font-weight: bold;
       }
-     
+     .profile{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+     }
     </style>
   </head>
   <body>
@@ -82,19 +99,25 @@
       <div class="menu-icon" onclick="toggleSidebar()">
         <i class="ri-menu-line menu-icon"></i>
       </div>
-      <div class="logo">
+      <div class="logo" style="margin-left: 100px;">
         <img src="logo.png" alt="" />
       </div>
 
       <div class="dropdown">
+       
         <button
-          class="butn btn-secondary dropdown-toggle"
+          class="dropdown-toggle"
           type="button"
           id="profileDropdown"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Profile
+        <img
+        src="https://randomuser.me/api/portraits/men/1.jpg"
+        alt=""
+        class="profile"
+      />
+        Jhonson
         </button>
         <ul class="dropdown-menu" aria-labelledby="profileDropdown">
           <!-- Profile Info -->
