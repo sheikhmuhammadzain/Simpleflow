@@ -606,3 +606,24 @@ select {
     width: 100%;
   }
 }
+
+
+
+
+
+.upload-btn{
+  border: 1px solid #ddd;
+  color: var(--primary-color);
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+
+.profile{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%; 
+}
