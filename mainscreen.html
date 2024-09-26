@@ -9,15 +9,34 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
       header {
         height: 60px;
         background-color: var(--gray-color);
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        padding-inline: 20px;
       }
-      .btn {
+      .dropdown-menu {
+        width: 250px;
+        padding: 15px;
+      }
+      .dropdown-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .dropdown-item svg {
+        width: 1.2em;
+        height: 1.2em;
+      }
+
+      .butn {
         border: none;
         background: transparent;
         font-weight: bold;
@@ -27,23 +46,92 @@
         border: none;
       }
 
-      .btn:hover {
+      .butn:hover {
         background-color: var(--primary-color);
         color: #fff;
       }
-      .btn.active {
+      .butn.active {
         background-color: var(--primary-color);
         color: #fff;
       }
       p {
         font-size: 13px;
       }
+      h2,
+      h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      h4 {
+        font-weight: bold;
+        font-size: 1rem;
+      }
+      h3 {
+        font-size: calc(0.9rem + 0.6vw);
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
     <header>
+      <div>
+        <i class="ri-menu-line"></i>
+      </div>
       <div class="logo">
         <img src="logo.png" alt="" />
+      </div>
+
+      <div class="dropdown">
+        <button
+          class="butn btn-secondary dropdown-toggle"
+          type="button"
+          id="profileDropdown"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Profile
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+          <!-- Profile Info -->
+          <li class="text-center">
+            <strong>Jhonson</strong><br />
+            <small>Jhon@gmail.com</small>
+            <hr />
+          </li>
+          <!-- Options -->
+          <li>
+            <a class="dropdown-item" href="#">
+              <!-- Icon for "Your details" -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 2c-1.885 0-5.333 1.16-5.333 2.833v.5h10.667v-.5C17.333 14.16 13.885 13 12 13z"
+                />
+              </svg>
+              Your details
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <!-- Icon for "Log out" -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  d="M10 9v6m4-3H7m7-6h2a2 2 0 012 2v10a2 2 0 01-2 2h-2m-4-2l-2-2m2 2l2-2m0-8L8 6"
+                />
+              </svg>
+              Log out
+            </a>
+          </li>
+        </ul>
       </div>
     </header>
     <div class="upper-toggle">
@@ -148,9 +236,9 @@
       <aside class="aside-right">
         <div class="summary">
           <div class="summary-btns border">
-            <button class="btn active" id="summary-btn">Summary</button>
-            <button class="btn scratch-btn">Scratchpad</button>
-            <button class="btn scratch-btn">Notes</button>
+            <button class="butn active" id="summary-btn">Summary</button>
+            <button class="butn scratch-btn">Scratchpad</button>
+            <button class="butn scratch-btn">Notes</button>
           </div>
           <div class="summary-content" id="summaryContent">
             <div class="s-heading">
@@ -223,7 +311,7 @@
           })
         );
       }
-    
+
       // Function to display summary content
       function displaySummaryContent() {
         document.getElementById("para").innerHTML = `
@@ -247,65 +335,71 @@
           </div>`;
         document.querySelector(".summary-content").style.display = "block";
       }
-    
+
       // Function to close overlay
       function closeOverlay() {
-        document.querySelector(".overlay").classList.toggle("active");
+        document.querySelector(".overlay").classList.remove("active");
       }
-    
+
       // Function to toggle overlay active state
       function toggleOverlay() {
         document.querySelector(".overlay").classList.toggle("active");
       }
-    
+
+      // Function to save patient information
+      let savedPatientData = {}; // Store the patient data globally
+
       // Function to save patient information
       function savePatientInfo() {
         const patientName = document.getElementById("patientName").value;
         const patientDOB = document.getElementById("patientDOB").value;
         const patientPlan = document.getElementById("patientPlan").value;
-    
+
+        // Store the data globally
+        savedPatientData = {
+          name: patientName,
+          dob: patientDOB,
+          plan: patientPlan,
+        };
+
         // Update the page with the new patient information
         document.querySelector(".upper-toggle").innerHTML = `
-          <section class="upper-section stop">
-            <div class="data-section">
-              <div><h3>Patient Name</h3><p>${patientName}</p></div>
-              <div><h3>Patient DOB</h3><p>${patientDOB}</p></div>
-              <div><h3>Patient Plan</h3><p>${patientPlan}</p></div>
-              <div><i class="ri-edit-2-line"></i></div>
-            </div>
-            <div class="stop-listening" id="stop-listening" onClick="stopListening()">
-              <div></div>
-              <div class="vector"><img src="Vector.png" alt="">
-              <h3 id="stop-btn">Stop Listening</h3></div>
-              <select>
-                <option value="">option1</option>
-                <option value="">option2</option>
-                <option value="">option3</option>
-              </select>
-            </div>
-          </section>`;
-    
-        // Clear the form fields
-        document.getElementById("patientName").value = "";
-        document.getElementById("patientDOB").value = "";
-        document.getElementById("patientPlan").value = "10-05-2024";
-    
+    <section class="upper-section stop">
+      <div class="data-section">
+        <div><h3>Patient Name</h3><p>${patientName}</p></div>
+        <div><h3>Patient DOB</h3><p>${patientDOB}</p></div>
+        <div><h3>Patient Plan</h3><p>${patientPlan}</p></div>
+        <div><i class="ri-edit-2-line"></i></div>
+      </div>
+      <div class="stop-listening" id="stop-listening" onClick="stopListening()">
+        <div></div>
+        <div class="vector"><img src="Vector.png" alt="">
+        <h3 id="stop-btn">Stop Listening</h3></div>
+        <select>
+          <option value="">option1</option>
+          <option value="">option2</option>
+          <option value="">option3</option>
+        </select>
+      </div>
+    </section>`;
+
         // Close the overlay
         closeOverlay();
       }
-    
+
       // Function to stop listening
       function stopListening() {
-        alert("Thank you for using our service!");
-        document.querySelector(".upper-section.stop").innerHTML = `
+        // Re-render the upper section with the same patient data
+        document.querySelector(".upper-toggle").innerHTML = `
           <section class="upper-section white">
             <div>
               <div class="mic-icon"><i class="ri-mic-line"></i></div>
               <h2>Start Listening</h2>
             </div>
+           
           </section>`;
       }
-    
+
       // Function to display scratchpad content
       function displayScratchpadContent() {
         document.getElementById("para").innerHTML = `
@@ -317,30 +411,40 @@
           </div>`;
         document.querySelector(".summary-content").style.display = "none";
       }
-    
+
       // Event listeners
       document.addEventListener("DOMContentLoaded", function () {
         // Toggle active class for buttons
-        const buttons = document.querySelectorAll(".btn");
+        const buttons = document.querySelectorAll(".butn");
         toggleActiveClass(buttons);
-    
+
         // Add event listener for summary button
-        document.getElementById("summary-btn").addEventListener("click", displaySummaryContent);
-    
+        document
+          .getElementById("summary-btn")
+          .addEventListener("click", displaySummaryContent);
+
         // Add event listener for close button on the overlay
-        document.querySelector(".close-btn").addEventListener("click", closeOverlay);
-    
+        document
+          .querySelector(".close-btn")
+          .addEventListener("click", closeOverlay);
+
         // Add event listener for overlay toggle
-        document.querySelector(".upper-section").addEventListener("click", toggleOverlay);
-    
+        document
+          .querySelector(".upper-section")
+          .addEventListener("click", toggleOverlay);
+
         // Add event listener for scratchpad buttons
         const scratchBtns = document.querySelectorAll(".scratch-btn");
-        scratchBtns.forEach((btn) => btn.addEventListener("click", displayScratchpadContent));
-    
+        scratchBtns.forEach((btn) =>
+          btn.addEventListener("click", displayScratchpadContent)
+        );
+
         // Add event listener for saving patient information
-        document.querySelector(".save-btn").addEventListener("click", savePatientInfo);
+        document
+          .querySelector(".save-btn")
+          .addEventListener("click", savePatientInfo);
       });
     </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

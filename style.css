@@ -123,6 +123,13 @@ img {
   position: absolute;
   top: 17px;
   right: 300px;
+  @media screen and (max-width: 1075px) {
+    right: 0;
+    top: 0;
+    max-width: 100%;
+    padding: 19px;
+    
+  }
 }
 .logo {
   width: 130px;
@@ -158,7 +165,7 @@ img {
     background-color: var(--primary-color);
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1075px) {
   .left {
     display: none;
   }
@@ -171,6 +178,7 @@ img {
   border: 1px solid #ddd;
   display: flex;
   align-items: center;
+  background-color: var(--gray-color);
   justify-content: center;
   padding-block: 15px;
   margin: 10px;
