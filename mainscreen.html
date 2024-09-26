@@ -14,6 +14,7 @@
       rel="stylesheet"
     />
     <style>
+     
       header {
         height: 60px;
         background-color: var(--gray-color);
@@ -21,6 +22,9 @@
         align-items: center;
         justify-content: space-between;
         padding-inline: 20px;
+       img{
+        margin-left: 50px;
+       }
       }
       .dropdown-menu {
         width: 250px;
@@ -70,12 +74,13 @@
         font-size: calc(0.9rem + 0.6vw);
         font-weight: bold;
       }
+     
     </style>
   </head>
   <body>
     <header>
-      <div>
-        <i class="ri-menu-line"></i>
+      <div class="menu-icon" onclick="toggleSidebar()">
+        <i class="ri-menu-line menu-icon"></i>
       </div>
       <div class="logo">
         <img src="logo.png" alt="" />
@@ -134,11 +139,38 @@
         </ul>
       </div>
     </header>
+<div class="side-overlay">
+  <aside class="sidebar" >
+    <div class="close-icon" onclick="toggleSidebar()">
+     <i class="ri-close-fill close-icon"></i>
+    </div>
+    <div>
+     <div class="side-links">
+       <div>
+         <a href="#" class="side-link active"> <i class="ri-home-line"></i> Home</a>
+         <a href="#" class="side-link "> <i class="ri-voiceprint-fill"></i> View Recording</a>
+         <a href="#" class="side-link " ><i class="ri-logout-box-line"></i> Logout</a>
+       </div>
+     </div>
+    </div>
+   <p>Version 1</p>
+   </aside>
+</div>
+
+
+
+
+
+
+
+
+
+
     <div class="upper-toggle">
       <section class="upper-section white">
         <div>
           <div class="mic-icon"><i class="ri-mic-line"></i></div>
-          <h2>Start Listening</h2>
+          <h2 class="fw-bold">Start Listening</h>
         </div>
       </section>
     </div>
@@ -178,8 +210,6 @@
         </div>
         <div class="p-wrapper">
           <div class="p-heading">
-            <h3>Patient</h3>
-            <p>01:22</p>
           </div>
           <div>
             <p>
@@ -193,8 +223,6 @@
         </div>
         <div class="d-wrapper">
           <div class="p-heading">
-            <h3>Doctor</h3>
-            <p>01:22</p>
           </div>
           <div>
             <p>
@@ -206,8 +234,6 @@
         </div>
         <div class="p-wrapper">
           <div class="p-heading">
-            <h3>Patient</h3>
-            <p>01:22</p>
           </div>
           <div>
             <p>
@@ -221,8 +247,6 @@
         </div>
         <div class="d-wrapper">
           <div class="p-heading">
-            <h3>Doctor</h3>
-            <p>01:22</p>
           </div>
           <div>
             <p>
@@ -257,8 +281,6 @@
         <div id="para">
           <div class="p-wrapper">
             <div class="p-heading">
-              <h3>Patient</h3>
-              <p>01:22</p>
             </div>
             <div>
               <p>
@@ -272,8 +294,6 @@
           </div>
           <div class="p-wrapper">
             <div class="p-heading">
-              <h3>Patient</h3>
-              <p>01:22</p>
             </div>
             <div>
               <p>
@@ -302,6 +322,21 @@
     </section>
 
     <script>
+
+const sideLinks = document.querySelectorAll(".side-link");
+
+sideLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    sideLinks.forEach((link) => link.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+
+
+
+
+
       // Function to toggle active class on buttons
       function toggleActiveClass(buttons) {
         buttons.forEach((btn) =>
@@ -317,8 +352,6 @@
         document.getElementById("para").innerHTML = `
           <div class="p-wrapper">
             <div class="p-heading">
-              <h3>Patient</h3>
-              <p>01:22</p>
             </div>
             <div>
               <p>Throughout the conversation, the patient details can be recorded here...</p>
@@ -326,8 +359,6 @@
           </div>
           <div class="p-wrapper">
             <div class="p-heading">
-              <h3>Patient</h3>
-              <p>01:22</p>
             </div>
             <div>
               <p>Throughout the conversation, additional patient details can be added...</p>
@@ -398,6 +429,10 @@
             </div>
            
           </section>`;
+      }
+      function toggleSidebar(){
+        document.querySelector(".sidebar").classList.toggle("active");
+        document.querySelector(".side-overlay").classList.toggle("active");
       }
 
       // Function to display scratchpad content
