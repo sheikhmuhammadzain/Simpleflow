@@ -622,8 +622,46 @@ select {
 }
 
 
-.profile{
-  height: 40px;
-  width: 40px;
-  border-radius: 50%; 
+.profile-img{
+  height: 80px;
+  width: 80px;
+  border-radius: 65%; 
+}
+
+.profile-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+    
+  }
+}
+.lower-userDetail{
+  display: flex;
+gap: 40px;
+padding: 0 40px;
+@media screen and (max-width: 768px) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+}
+.info-wrapper{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  gap: 40px;
+  width: 65%;
+  form{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vocalize</title>
-    <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
@@ -15,9 +15,9 @@
       rel="stylesheet"
     />
     <style>
-        body {
-  background-color: var(--gray-color);
-}
+      body {
+        background-color: var(--gray-color);
+      }
       header {
         height: 60px;
         background-color: var(--gray-color);
@@ -26,9 +26,8 @@
         justify-content: space-between;
         padding-inline: 20px;
         margin-bottom: 50px;
-      
       }
-      .dropdown-toggle{
+      .dropdown-toggle {
         background-color: #fff;
         border: none;
         display: flex;
@@ -36,7 +35,7 @@
         justify-content: space-between;
         gap: 20px;
         padding: 5px 10px;
-        border-radius: 100px ;
+        border-radius: 100px;
       }
       .dropdown-menu {
         width: 250px;
@@ -88,11 +87,11 @@
         font-size: calc(0.9rem + 0.6vw);
         font-weight: bold;
       }
-     .profile{
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-     }
+      .profile {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
     </style>
   </head>
   <body>
@@ -100,12 +99,11 @@
       <div class="menu-icon" onclick="toggleSidebar()">
         <i class="ri-menu-line menu-icon"></i>
       </div>
-      <div class="logo" style="margin-left: 100px;">
+      <div class="logo" style="margin-left: 100px">
         <img src="logo.png" alt="" />
       </div>
 
       <div class="dropdown">
-       
         <button
           class="dropdown-toggle"
           type="button"
@@ -113,31 +111,33 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-        <img
-        src="https://randomuser.me/api/portraits/men/1.jpg"
-        alt=""
-        class="profile"
-      />
-        Jhonson
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-          <!-- Profile Info -->
-          <li class="text-center d-flex gap-2 ">
-            <img
+          <img
             src="https://randomuser.me/api/portraits/men/1.jpg"
             alt=""
             class="profile"
           />
-         
-          <div class="d-flex flex-column justify-content-lg-start"><strong class="text-capitalize ">Jhonson <br></strong>
-            <small>Jhon@gmail.com</small></div>
-            
+          Jhonson
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+          <!-- Profile Info -->
+          <li class="text-center d-flex gap-2">
+            <img
+              src="https://randomuser.me/api/portraits/men/1.jpg"
+              alt=""
+              class="profile"
+            />
+
+            <div class="d-flex flex-column justify-content-lg-start">
+              <strong class="text-capitalize">Jhonson <br /></strong>
+              <small>Jhon@gmail.com</small>
+            </div>
+
             <hr />
           </li>
-        
+
           <!-- Options -->
           <li>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="userDetail.html">
               <!-- Icon for "Your details" -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -171,74 +171,72 @@
         </ul>
       </div>
     </header>
-<div class="side-overlay">
-  <aside class="sidebar" >
-    <div class="close-icon" onclick="toggleSidebar()">
-     <i class="ri-close-fill close-icon"></i>
+    <div class="side-overlay">
+      <aside class="sidebar">
+        <div class="close-icon" onclick="toggleSidebar()">
+          <i class="ri-close-fill close-icon"></i>
+        </div>
+        <div>
+          <div class="side-links">
+            <div>
+              <a href="mainscreen.html" class="side-link">
+                <i class="ri-home-line"></i> Home</a
+              >
+              <a href="#" class="side-link active">
+                <i class="ri-voiceprint-fill"></i> View Recording</a
+              >
+              <a href="index.html" class="side-link"
+                ><i class="ri-logout-box-line"></i> Logout</a
+              >
+            </div>
+          </div>
+        </div>
+        <p>Version 1</p>
+      </aside>
     </div>
-    <div>
-     <div class="side-links">
-       <div>
-         <a href="mainscreen.html" class="side-link"> <i class="ri-home-line"></i> Home</a>
-         <a href="#" class="side-link active "> <i class="ri-voiceprint-fill"></i> View Recording</a>
-         <a href="index.html" class="side-link " ><i class="ri-logout-box-line"></i> Logout</a>
-       </div>
-     </div>
-    </div>
-   <p>Version 1</p>
-   </aside>
-</div>
 
-
-
-
-
-
-
-
-
-
-
-
-    <section class="lower-section">
-     <div>
+    <section class="lower-userDetail">
+      <div>
         <h1>Contact Info</h1>
         <p>Manage Your information</p>
-     </div>
-     <div class="info-wrapper">
-        <div>
-            <img  class="profile" src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
-            <div>
-               <h1>Jhonson</h1>
-               <p>Jhonson@mail.com</p>
-            </div>
-            <button class="upload-btn">Upload Photo</button>
+      </div>
+      <div class="info-wrapper">
+        <div class="profile-wrapper">
+          <img
+            class="profile-img"
+            src="https://randomuser.me/api/portraits/men/1.jpg"
+            alt=""
+          />
+          <div>
+            <h1>Jhonson</h1>
+            <p>Jhonson@mail.com</p>
+          </div>
+          <button class="upload-btn">Upload Photo</button>
         </div>
-    </div>
-    <div>
-        <form action="">
-            <label for="name">Name</label>
-            <input type="text" name="name" placeholder="Enter Name" id="">
-            <label for="Email">Email</label>
-            <input type="email" name="" placeholder="Enter Email" id="">
-        </form>
-    </div>
-      
+        <div>
+          <form action="">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" name="name" placeholder="Enter Name" id="" />
+            </div>
+            <div>
+              <label for="Email">Email</label>
+              <input type="text" name="" placeholder="Enter Email" id="" />
+            </div>
+          </form>
+        </div>
+      </div>
     </section>
 
     <script>
+      const sideLinks = document.querySelectorAll(".side-link");
 
-const sideLinks = document.querySelectorAll(".side-link");
-
-sideLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    sideLinks.forEach((link) => link.classList.remove("active"));
-    link.classList.add("active");
-  });
-});
-
-
-
+      sideLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          sideLinks.forEach((link) => link.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
 
       // Function to toggle active class on buttons
       function toggleActiveClass(buttons) {
@@ -280,7 +278,7 @@ sideLinks.forEach((link) => {
         document.querySelector(".overlay").classList.toggle("active");
       }
 
-      function toggleSidebar(){
+      function toggleSidebar() {
         document.querySelector(".sidebar").classList.toggle("active");
         document.querySelector(".side-overlay").classList.toggle("active");
       }
