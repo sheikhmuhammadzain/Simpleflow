@@ -15,7 +15,9 @@
       rel="stylesheet"
     />
     <style>
-     
+        body {
+  background-color: var(--gray-color);
+}
       header {
         height: 60px;
         background-color: var(--gray-color);
@@ -23,6 +25,7 @@
         align-items: center;
         justify-content: space-between;
         padding-inline: 20px;
+        margin-bottom: 50px;
       
       }
       .dropdown-toggle{
@@ -178,7 +181,7 @@
        <div>
          <a href="mainscreen.html" class="side-link"> <i class="ri-home-line"></i> Home</a>
          <a href="#" class="side-link active "> <i class="ri-voiceprint-fill"></i> View Recording</a>
-         <a href="#" class="side-link " ><i class="ri-logout-box-line"></i> Logout</a>
+         <a href="index.html" class="side-link " ><i class="ri-logout-box-line"></i> Logout</a>
        </div>
      </div>
     </div>
@@ -195,41 +198,7 @@
 
 
 
-    <div class="upper-toggle">
-      <section class="upper-section white">
-        <div>
-          <div class="mic-icon"><i class="ri-mic-line"></i></div>
-          <h2 class="fw-bold">Start Listening</h>
-        </div>
-      </section>
-    </div>
 
-    <div class="overlay">
-      <div class="popup">
-        <div class="popup-header">
-          <h2>Add Client</h2>
-          <button class="close-btn">&times;</button>
-        </div>
-        <div class="search-box">
-          <i class="ri-search-line"></i>
-          <input type="search" placeholder="Search any keyword" />
-        </div>
-        <div class="or-divider">or</div>
-        <h4>Client Name</h4>
-        <input type="text" id="ClientName" placeholder="Client name" />
-        <h4>Client DOB</h4>
-        <input
-          type="text"
-          id="ClientDOB"
-          placeholder="Enter DOB"
-          onfocus="(this.type='date')"
-          onblur="if(this.value==''){this.type='text'}"
-        />
-        <h4>Plan</h4>
-        <input type="text" id="ClientPlan" value="10-05-2024" />
-        <button class="save-btn" onclick="saveClientInfo()">Save</button>
-      </div>
-    </div>
 
     <section class="lower-section">
       <aside class="transcript">
