@@ -176,8 +176,8 @@
     <div>
      <div class="side-links">
        <div>
-         <a href="#" class="side-link active"> <i class="ri-home-line"></i> Home</a>
-         <a href="showrecording.html" class="side-link "> <i class="ri-voiceprint-fill"></i> View Recording</a>
+         <a href="mainscreen.html" class="side-link"> <i class="ri-home-line"></i> Home</a>
+         <a href="#" class="side-link active "> <i class="ri-voiceprint-fill"></i> View Recording</a>
          <a href="#" class="side-link " ><i class="ri-logout-box-line"></i> Logout</a>
        </div>
      </div>
@@ -234,73 +234,53 @@
     <section class="lower-section">
       <aside class="transcript">
         <div class="t-heading">
-          <h2>Transcript</h2>
-          <button class="s-btn">Make Summary</button>
-        </div>
-        <div class="p-wrapper">
-          <div class="p-heading">
-          </div>
-          <div>
-            <p>
-              Throughout the conversation for example if the Client is morbidly
-              obese or ifthe Client has suspected cancer ita llows you to be
-              able to write that throughout the conversation for example if the
-              Client is morbidly obese or ifthe Client has suspected cancer
-              ita llows you to be able to write that.
-            </p>
+          <h2>All Recording</h2>
+          <div class="search-box">
+            <i class="ri-search-line"></i>
+            <input type="search" placeholder="Search" />
           </div>
         </div>
-        <div class="d-wrapper">
-          <div class="p-heading">
-          </div>
-          <div>
-            <p>
-              Throughout the conversation for example if the Client is morbidly
-              obese or ifthe Client has suspected cancer ita llows you to be
-              able to write
-            </p>
-          </div>
-        </div>
-        <div class="p-wrapper">
-          <div class="p-heading">
-          </div>
-          <div>
-            <p>
-              Throughout the conversation for example if the Client is morbidly
-              obese or ifthe Client has suspected cancer ita llows you to be
-              able to write that throughout the conversation for example if the
-              Client is morbidly obese or ifthe Client has suspected cancer
-              ita llows you to be able to write that.
-            </p>
-          </div>
-        </div>
-        <div class="d-wrapper">
-          <div class="p-heading">
-          </div>
-          <div>
-            <p>
-              Throughout the conversation for example if the Client is morbidly
-              obese or ifthe Client has suspected cancer ita llows you to be
-              able to write
-            </p>
-          </div>
-        </div>
+      <div class="rec-headings">
+        <p>#</p>
+        <p>Recording Length</p>
+        <p>Recording date</p>
+        <p>Client Name  </p>
+        <p>Action</p>
+      </div>
+      <div class="recording-content" id="recordingContent">
+        <p>1</p>
+        <p>20min</p>
+        <p>22-02-2024</p>
+        <p>Ibrahim Khan</p>
+        <button class="s-btn">View Summary</button>
+      </div>
+      <div class="recording-content" id="recordingContent">
+        <p>1</p>
+        <p>20min</p>
+        <p>22-02-2024</p>
+        <p>Ibrahim Khan</p>
+        <button class="s-btn">View Summary</button>
+      </div>
+      <div class="recording-content" id="recordingContent">
+        <p>1</p>
+        <p>20min</p>
+        <p>22-02-2024</p>
+        <p>Ibrahim Khan</p>
+        <button class="s-btn">View Summary</button>
+      </div>
+      <div class="recording-content" id="recordingContent">
+        <p>1</p>
+        <p>20min</p>
+        <p>22-02-2024</p>
+        <p>Ibrahim Khan</p>
+        <button class="s-btn">View Summary</button>
+      </div>
       </aside>
       <aside class="aside-right">
         <div class="summary">
-          <div class="summary-btns border">
-            <button class="butn active" id="summary-btn">Summary</button>
-            <button class="butn scratch-btn">Scratchpad</button>
-            <button class="butn scratch-btn">Notes</button>
-          </div>
+         <h1>Summary</h1>
           <div class="summary-content" id="summaryContent">
-            <div class="s-heading">
-              <h1>Start Dictation</h1>
-              <select name="Soap Notes" id="">
-                <option value="">Soap Notes</option>
-                <option value="">Soap Value</option>
-              </select>
-            </div>
+            
             <div class="search-box">
               <i class="ri-search-line"></i>
               <input type="search" placeholder="Search any keyword" />
@@ -318,14 +298,6 @@
                 you to be able to write that throughout the conversation for
                 example if the Client is morbidly obese or ifthe Client has
                 suspected cancer ita llows you to be able to write that.
-              </p>
-            </div>
-          </div>
-          <div class="p-wrapper">
-            <div class="p-heading">
-            </div>
-            <div>
-              <p>
                 Throughout the conversation for example if the Client is
                 morbidly obese or ifthe Client has suspected cancer ita llows
                 you to be able to write that throughout the conversation for
@@ -334,6 +306,7 @@
               </p>
             </div>
           </div>
+       
         </div>
 
         <!-- <div id="para">
@@ -404,59 +377,6 @@ sideLinks.forEach((link) => {
         document.querySelector(".overlay").classList.toggle("active");
       }
 
-      // Function to save Client information
-      let savedClientData = {}; // Store the Client data globally
-
-      // Function to save Client information
-      function saveClientInfo() {
-        const ClientName = document.getElementById("ClientName").value;
-        const ClientDOB = document.getElementById("ClientDOB").value;
-        const ClientPlan = document.getElementById("ClientPlan").value;
-
-        // Store the data globally
-        savedClientData = {
-          name: ClientName,
-          dob: ClientDOB,
-          plan: ClientPlan,
-        };
-
-        // Update the page with the new Client information
-        document.querySelector(".upper-toggle").innerHTML = `
-    <section class="upper-section stop">
-      <div class="data-section">
-        <div><h3>Client Name</h3><p>${ClientName}</p></div>
-        <div><h3>Client DOB</h3><p>${ClientDOB}</p></div>
-        <div><h3>Client Plan</h3><p>${ClientPlan}</p></div>
-        <div><i class="ri-edit-2-line"></i></div>
-      </div>
-      <div class="stop-listening" id="stop-listening" onClick="stopListening()">
-        <div></div>
-        <div class="vector"><img src="Vector.png" alt="">
-        <h3 id="stop-btn">Stop Listening</h3></div>
-        <select>
-          <option value="">option1</option>
-          <option value="">option2</option>
-          <option value="">option3</option>
-        </select>
-      </div>
-    </section>`;
-
-        // Close the overlay
-        closeOverlay();
-      }
-
-      // Function to stop listening
-      function stopListening() {
-        // Re-render the upper section with the same Client data
-        document.querySelector(".upper-toggle").innerHTML = `
-         <section class="upper-section white">
-        <div>
-          <div class="mic-icon"><i class="ri-mic-line"></i></div>
-          <h2 class="fw-bold">Start Listening</h>
-        </div>
-      </section>`;
-      document.querySelector(".upper-section").addEventListener("click", toggleOverlay);
-      }
       function toggleSidebar(){
         document.querySelector(".sidebar").classList.toggle("active");
         document.querySelector(".side-overlay").classList.toggle("active");

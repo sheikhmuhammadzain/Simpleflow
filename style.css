@@ -229,7 +229,7 @@ img {
   align-items: center;
   gap: 20px;
   background-color: var(--gray-color);
-  padding: 10px;
+  padding:5px 10px;
   border: 1px solid #ddd;
   border-radius: 20px;
   input {
@@ -360,6 +360,44 @@ input[type="date"] {
     margin-bottom: 10px;
   }
 }
+.rec-headings{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--gray-color);
+  border-radius: 5px;
+  p{
+    margin: 0;
+    font-weight: bold;
+    width: 20%;
+    
+  }
+  @media screen and (max-width: 652px) {
+    gap: 10px;
+  justify-content: space-between;
+  flex-direction: column;    
+    }
+}
+.recording-content{
+  display: flex;
+  align-items: center;
+
+  font-weight: bold;
+  padding: 20px;
+  p,button{
+    width: 20%;
+    margin: 0;
+    font-size: 13px;
+  }
+  button{
+    padding: 5px 20px;
+  }
+  @media screen and (max-width: 652px) {
+    gap: 10px;
+  justify-content: space-between;
+  flex-direction: column;    
+    }
+}
 .stop-listening {
   cursor: pointer;
   border-radius: 10px;
@@ -441,11 +479,12 @@ input[type="date"] {
   z-index: 10000;
   background-color: #fff;
   padding: 20px 0;
-  
+ 
   transform: translateX(-100%);
   a.active {
-    background-color: var(--primary-color);
-    color: #fff;
+    background-color: var(--secondary-color);
+   color: var(--primary-color);
+ font-weight: bold;
     border-radius: 10px;
   }
   a {
@@ -454,6 +493,12 @@ input[type="date"] {
     text-decoration: none;
     padding: 8px 20px;
     margin-bottom: 10px;
+
+    &:hover {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+      border-radius: 10px;
+    }
 
     i {
       margin-right: 10px;
