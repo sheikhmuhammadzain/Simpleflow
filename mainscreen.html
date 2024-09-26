@@ -214,166 +214,133 @@
     </section>
 
     <script>
-      const btns = document.querySelectorAll(".btn");
-      btns.forEach((btn) => {
-        btn.addEventListener("click", function () {
-          btns.forEach((btn) => btn.classList.remove("active"));
-          btn.classList.toggle("active");
-        });
-      });
-      const summaryContent = document.getElementById("summaryContent");
-      const scratchpadContent = document.getElementById("scratchpadContent");
-      const summaryBtn = document.getElementById("summary-btn");
-
-      summaryBtn.addEventListener("click", function () {
+      // Function to toggle active class on buttons
+      function toggleActiveClass(buttons) {
+        buttons.forEach((btn) =>
+          btn.addEventListener("click", function () {
+            buttons.forEach((btn) => btn.classList.remove("active"));
+            btn.classList.toggle("active");
+          })
+        );
+      }
+    
+      // Function to display summary content
+      function displaySummaryContent() {
         document.getElementById("para").innerHTML = `
- 
- <div class="p-wrapper">
-          <div class="p-heading">
-            <h3>Patient</h3>
-            <p>01:22</p>
+          <div class="p-wrapper">
+            <div class="p-heading">
+              <h3>Patient</h3>
+              <p>01:22</p>
+            </div>
+            <div>
+              <p>Throughout the conversation, the patient details can be recorded here...</p>
+            </div>
           </div>
-          <div>
-            <p>
-              Throughout the conversation for example if the patient is morbidly
-              obese or ifthe patient has suspected cancer ita llows you to be
-              able to write that throughout the conversation for example if the
-              patient is morbidly obese or ifthe patient has suspected cancer
-              ita llows you to be able to write that.
-            </p>
-          </div>
-        </div>
-        <div class="p-wrapper">
-          <div class="p-heading">
-            <h3>Patient</h3>
-            <p>01:22</p>
-          </div>
-          <div>
-            <p>
-              Throughout the conversation for example if the patient is morbidly
-              obese or ifthe patient has suspected cancer ita llows you to be
-              able to write that throughout the conversation for example if the
-              patient is morbidly obese or ifthe patient has suspected cancer
-              ita llows you to be able to write that.
-            </p>
-          </div>
-      
-        </div>
- 
- `;
- summary.style.display = "block";
-      });
-
-      const summary = document.querySelector(".summary-content");
-      document
-        .querySelector(".close-btn")
-        .addEventListener("click", function () {
-          document.querySelector(".overlay").classList.toggle("active");
-        });
-      let overlay = document.querySelector(".overlay");
-      document
-        .querySelector(".upper-section")
-        .addEventListener("click", function () {
-          overlay.classList.toggle("active");
-        });
-
+          <div class="p-wrapper">
+            <div class="p-heading">
+              <h3>Patient</h3>
+              <p>01:22</p>
+            </div>
+            <div>
+              <p>Throughout the conversation, additional patient details can be added...</p>
+            </div>
+          </div>`;
+        document.querySelector(".summary-content").style.display = "block";
+      }
+    
+      // Function to close overlay
+      function closeOverlay() {
+        document.querySelector(".overlay").classList.toggle("active");
+      }
+    
+      // Function to toggle overlay active state
+      function toggleOverlay() {
+        document.querySelector(".overlay").classList.toggle("active");
+      }
+    
+      // Function to save patient information
       function savePatientInfo() {
         const patientName = document.getElementById("patientName").value;
         const patientDOB = document.getElementById("patientDOB").value;
         const patientPlan = document.getElementById("patientPlan").value;
-        // summaryContent.textContent = `Conducted in Doha, Qatar on Canadian Servers. Hence the slow responses at times. This can easily be alleviated once we establish local servers. This can be conducted in Arabic (all dialects), French, Hindi (beta phase) among other languages. Would love to provide you with an in-person demo to truly see its benefit.`;
-        // scratchpadContent.textContent = `Conducted in Doha, Qatar on Canadian Servers. Hence the slow responses at times. This can easily be alleviated once we establish local servers. This can be conducted in Arabic (all dialects), French, Hindi (beta phase) among other languages. Would love to provide you with an in-person demo to truly see its benefit.`;
+    
         // Update the page with the new patient information
-        // document.querySelector('.upper-section h2').textContent = patientName;
-
-        // Update the transcript section
-        // document.getElementById("transcriptContent").textContent = `1:21
-        //     throughout the conversation for example
-        //     1:24
-        //     if the patient is morbidly obese or if
-        //     1:25
-        //     the patient has suspected cancer it
-        //     1:27
-        //     allows you to be able to write that
-        //     1:28
-        //     stuff down if it's information without
-        //     1:30
-        //     saying it out loud and so I'm going to
-        //     1:32
-        //     kind of go ahead and show you
-        //     1:35
-        //     here uh like we said you know if it were
-        //     1:38
-        //     integrated there would be like khif at
-        //     1:39
-        //     9:00 P p.m or 9:00 am or whatever but
-        //     1:42
-        //     you know just for the interest we're
-        //     1:43`;
-
         document.querySelector(".upper-toggle").innerHTML = `
-        <section class="upper-section stop">
-      <div class="data-section">
-        <div>
-          <h3>Patient Name</h3>
-          <p>${patientName}</p>
-        </div>
-        <div>
-          <h3>Patient DOB</h3>
-          <p>${patientDOB}</p>
-        </div>
-        <div>
-          <h3>Patient Plan</h3>
-          <p>${patientDOB}</p>
-        </div>
-        <div>
-          <i class="ri-edit-2-line"></i>
-        </div>
-      </div>
-      <div class="stop-listening">
-      <div></div>
-      <div class="vector"><img src="Vector.png"  alt="">
-        <a href="mainscreen.html">  <h3>Stop Listening</h3></a></div>
-        <select name="" id="">
-          <option value="">option1</option>
-          <option value="">option2</option>
-          <option value="">option3</option>
-        </select>
-
-      </div>
-      </div>
-    </section>
-        `;
-
+          <section class="upper-section stop">
+            <div class="data-section">
+              <div><h3>Patient Name</h3><p>${patientName}</p></div>
+              <div><h3>Patient DOB</h3><p>${patientDOB}</p></div>
+              <div><h3>Patient Plan</h3><p>${patientPlan}</p></div>
+              <div><i class="ri-edit-2-line"></i></div>
+            </div>
+            <div class="stop-listening" id="stop-listening" onClick="stopListening()">
+              <div></div>
+              <div class="vector"><img src="Vector.png" alt="">
+              <h3 id="stop-btn">Stop Listening</h3></div>
+              <select>
+                <option value="">option1</option>
+                <option value="">option2</option>
+                <option value="">option3</option>
+              </select>
+            </div>
+          </section>`;
+    
         // Clear the form fields
         document.getElementById("patientName").value = "";
         document.getElementById("patientDOB").value = "";
         document.getElementById("patientPlan").value = "10-05-2024";
-
+    
         // Close the overlay
-        overlay.classList.toggle("active");
+        closeOverlay();
       }
-      document
-        .querySelector(".save-btn")
-        .addEventListener("click", function () {});
-
-      const scratchBtns = document.querySelectorAll(".scratch-btn");
-
-      scratchBtns.forEach((scratchBtn) => {
-        scratchBtn.addEventListener("click", function () {
-          document.getElementById(
-            "para"
-          ).innerHTML = ` <div class="border scratch-para">
-          <p>Throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that throughout the conversation for example if the patient is morbidly obese or ifthe patient has suspected cancer ita llows you to be able to write that.</p>
-
-        </div>
-        <div class="flex">
-          <button class="s-btn submit-btn"> Submit</button>
-        </div>
-        `
-        summary.style.display = "none";
-        });
+    
+      // Function to stop listening
+      function stopListening() {
+        alert("Thank you for using our service!");
+        document.querySelector(".upper-section.stop").innerHTML = `
+          <section class="upper-section white">
+            <div>
+              <div class="mic-icon"><i class="ri-mic-line"></i></div>
+              <h2>Start Listening</h2>
+            </div>
+          </section>`;
+      }
+    
+      // Function to display scratchpad content
+      function displayScratchpadContent() {
+        document.getElementById("para").innerHTML = `
+          <div class="border scratch-para">
+            <p>Details about the patient's conditions can be added here.</p>
+          </div>
+          <div class="flex">
+            <button class="s-btn submit-btn">Submit</button>
+          </div>`;
+        document.querySelector(".summary-content").style.display = "none";
+      }
+    
+      // Event listeners
+      document.addEventListener("DOMContentLoaded", function () {
+        // Toggle active class for buttons
+        const buttons = document.querySelectorAll(".btn");
+        toggleActiveClass(buttons);
+    
+        // Add event listener for summary button
+        document.getElementById("summary-btn").addEventListener("click", displaySummaryContent);
+    
+        // Add event listener for close button on the overlay
+        document.querySelector(".close-btn").addEventListener("click", closeOverlay);
+    
+        // Add event listener for overlay toggle
+        document.querySelector(".upper-section").addEventListener("click", toggleOverlay);
+    
+        // Add event listener for scratchpad buttons
+        const scratchBtns = document.querySelectorAll(".scratch-btn");
+        scratchBtns.forEach((btn) => btn.addEventListener("click", displayScratchpadContent));
+    
+        // Add event listener for saving patient information
+        document.querySelector(".save-btn").addEventListener("click", savePatientInfo);
       });
     </script>
+    
   </body>
 </html>
