@@ -27,7 +27,8 @@ button {
 #signInBtn {
   border: none;
   color: #c0bebe;
-  padding: 10px 45px;
+  padding: 8px 10px;
+  margin-right: 10px;
 }
 .para {
   font-size: 12px;
