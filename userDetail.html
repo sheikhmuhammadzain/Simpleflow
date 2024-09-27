@@ -18,6 +18,9 @@
       body {
         background-color: var(--gray-color);
       }
+      form{
+        
+      }
       header {
         height: 60px;
         background-color: var(--gray-color);
@@ -146,6 +149,7 @@
       </aside>
     </div>
 
+   
     <section class="lower-userDetail">
       <div>
           <h1>Contact Info</h1>
@@ -155,14 +159,14 @@
           <div class="profile-wrapper">
               <img class="profile-img" src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile Picture" id="mainProfileImage">
               <div>
-                  <h1>Jhonson</h1>
-                  <p>Jhonson@mail.com</p>
+                  <h1 id="displayName">Jhonson</h1>
+                  <p id="displayEmail">Jhonson@mail.com</p>
               </div>
               <input type="file" id="photoUpload" style="display: none;" accept="image/*">
-              <button class="upload-btn"  onclick="document.getElementById('photoUpload').click()">Upload Photo</button>
+              <button class="upload-btn" onclick="document.getElementById('photoUpload').click()">Upload Photo</button>
           </div>
           <div>
-              <form action="">
+              <form id="updateForm">
                   <div>
                       <label for="name">Name</label>
                       <input type="text" name="name" placeholder="Enter Name" id="name">
@@ -171,8 +175,8 @@
                       <label for="email">Email</label>
                       <input type="text" name="email" placeholder="Enter Email" id="email">
                   </div>
+                  <button type="submit" class="s-btn">Update</button>
               </form>
-              <button class="s-btn">Update</button>
           </div>
       </div>
   </section>
@@ -297,6 +301,32 @@
                 alert('Please select an image file.');
             }
         });
+
+
+
+
+
+        document.getElementById('updateForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const newName = document.getElementById('name').value;
+        const newEmail = document.getElementById('email').value;
+
+        if (newName) {
+          document.getElementById('displayName').textContent = newName;
+          document.querySelector('.dropdown-toggle').textContent = newName;
+          document.querySelector('.dropdown-menu .text-capitalize').textContent = newName;
+        }
+
+        if (newEmail) {
+          document.getElementById('displayEmail').textContent = newEmail;
+          document.querySelector('.dropdown-menu small').textContent = newEmail;
+        }
+
+        // Clear input fields after update
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+
+      });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
