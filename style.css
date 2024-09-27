@@ -111,13 +111,14 @@ img {
   width: 100%;
   min-height: 100vh;
   padding: 2rem;
-  .p-bottom {
-    position: absolute;
-    bottom: -64px;
-    left: 0;
-    font-size: 10px;
-  }
+  
 }
+.p-bottom {
+  position: absolute;
+  bottom: 0;
+left: 205;
+  margin-top: 66px;
+ }
 .wrap {
   width: 100%;
   max-width: 331px;
@@ -191,8 +192,13 @@ img {
   display: ruby-text;
   position: absolute;
   bottom: 0;
-  left: 0;
+right: 332px;
   margin-top: 66px;
+  @media screen and (max-width: 1075px) {
+   right: 100px;
+    max-width: 100%;
+    padding: 19px;
+  }
 }
 .lower-section {
   display: grid;
@@ -677,3 +683,7 @@ form{
     gap: 10px;
   }
 }
+
+
+
+
