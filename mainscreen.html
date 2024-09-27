@@ -56,11 +56,12 @@
       .butn {
         border: none;
         background: transparent;
-        font-weight: bold;
         color: var(--primary-color);
         border-radius: 10px;
         padding: 10px 30px;
         border: none;
+        font-size: 0.8rem;
+        font-weight: bold;
       }
 
       .butn:hover {
@@ -227,8 +228,8 @@
           onfocus="(this.type='date')"
           onblur="if(this.value==''){this.type='text'}"
         />
-        <h4>Plan</h4>
-        <input type="text" id="ClientPlan" value="10-05-2024" />
+        <h4>Date</h4>
+        <input type="text" id="ClientDate" value="10-05-2024" />
         <button class="save-btn" onclick="saveClientInfo()">Save</button>
       </div>
     </div>
@@ -413,13 +414,13 @@ sideLinks.forEach((link) => {
       function saveClientInfo() {
         const ClientName = document.getElementById("ClientName").value;
         const ClientDOB = document.getElementById("ClientDOB").value;
-        const ClientPlan = document.getElementById("ClientPlan").value;
+        const ClientDate = document.getElementById("ClientDate").value;
 
         // Store the data globally
         savedClientData = {
           name: ClientName,
           dob: ClientDOB,
-          plan: ClientPlan,
+          Date: ClientDate,
         };
 
         // Update the page with the new Client information
@@ -428,18 +429,14 @@ sideLinks.forEach((link) => {
       <div class="data-section">
         <div><h3>Client Name</h3><p>${ClientName}</p></div>
         <div><h3>Client DOB</h3><p>${ClientDOB}</p></div>
-        <div><h3>Client Plan</h3><p>${ClientPlan}</p></div>
+        <div><h3>Date</h3><p>${ClientDate}</p></div>
         <div><i class="ri-edit-2-line"></i></div>
       </div>
       <div class="stop-listening" id="stop-listening" onClick="stopListening()">
         <div></div>
         <div class="vector"><img src="Vector.png" alt="">
         <h3 id="stop-btn">Stop Listening</h3></div>
-        <select>
-          <option value="">option1</option>
-          <option value="">option2</option>
-          <option value="">option3</option>
-        </select>
+        
       </div>
     </section>`;
 
@@ -449,14 +446,33 @@ sideLinks.forEach((link) => {
 
       // Function to stop listening
       function stopListening() {
+        const ClientName = document.getElementById("ClientName").value;
+        const ClientDOB = document.getElementById("ClientDOB").value;
+        const ClientDate = document.getElementById("ClientDate").value;
+
+        // Store the data globally
+        savedClientData = {
+          name: ClientName,
+          dob: ClientDOB,
+          Date: ClientDate,
+        };
+
         // Re-render the upper section with the same Client data
         document.querySelector(".upper-toggle").innerHTML = `
-         <section class="upper-section white">
-        <div>
-          <div class="mic-icon"><i class="ri-mic-line"></i></div>
-          <h2 class="fw-bold">Start Listening</h>
-        </div>
-      </section>`;
+         <section class="upper-section stop">
+      <div class="data-section">
+        <div><h3>Client Name</h3><p>${ClientName}</p></div>
+        <div><h3>Client DOB</h3><p>${ClientDOB}</p></div>
+        <div><h3>Date</h3><p>${ClientDate}</p></div>
+        <div><i class="ri-edit-2-line"></i></div>
+      </div>
+      <div class="stop-listening" id="stop-listening" style="flex-direction: column" onClick="stopListening()">
+        <div></div>
+        <i class="ri-play-circle-line" style="font-size: 17px ;font-weight: 600" ></i>
+        <h3 id="stop-btn">Start Listening</h3></div>
+        
+      </div>
+    </section>`;
       document.querySelector(".upper-section").addEventListener("click", toggleOverlay);
       }
       function toggleSidebar(){
