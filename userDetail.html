@@ -42,6 +42,7 @@
         padding: 15px;
         border-radius: 10px;
         background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       }
       .dropdown-item {
         display: flex;
@@ -102,74 +103,24 @@
       <div class="logo" style="margin-left: 100px">
         <img src="logo.png" alt="" />
       </div>
-
       <div class="dropdown">
-        <button
-          class="dropdown-toggle"
-          type="button"
-          id="profileDropdown"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img
-            src="https://randomuser.me/api/portraits/men/1.jpg"
-            alt=""
-            class="profile"
-          />
-          Jhonson
+        <button class="btn dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="" class="header-profile" id="headerProfileImage">
+            Jhonson
         </button>
         <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-          <!-- Profile Info -->
-          <li class="text-center d-flex gap-2">
-            <img
-              src="https://randomuser.me/api/portraits/men/1.jpg"
-              alt=""
-              class="profile"
-            />
-
-            <div class="d-flex flex-column justify-content-lg-start">
-              <strong class="text-capitalize">Jhonson <br /></strong>
-              <small>Jhon@gmail.com</small>
-            </div>
-
-            <hr />
-          </li>
-
-          <!-- Options -->
-          <li>
-            <a class="dropdown-item" href="userDetail.html">
-              <!-- Icon for "Your details" -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 2c-1.885 0-5.333 1.16-5.333 2.833v.5h10.667v-.5C17.333 14.16 13.885 13 12 13z"
-                />
-              </svg>
-              Your details
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="index.html">
-              <!-- Icon for "Log out" -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  d="M10 9v6m4-3H7m7-6h2a2 2 0 012 2v10a2 2 0 01-2 2h-2m-4-2l-2-2m2 2l2-2m0-8L8 6"
-                />
-              </svg>
-              Log out
-            </a>
-          </li>
+            <li class="text-center d-flex gap-2 p-2">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="" class="header-profile" id="dropdownProfileImage">
+                <div class="d-flex flex-column justify-content-lg-start">
+                    <strong class="text-capitalize text-start">Jhonson</strong>
+                    <small>Jhon@gmail.com</small>
+                </div>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">   Your details</a></li>
+            <li><a class="dropdown-item" href="#">Log out</a></li>
         </ul>
-      </div>
+    </div>
     </header>
     <div class="side-overlay">
       <aside class="sidebar">
@@ -197,36 +148,34 @@
 
     <section class="lower-userDetail">
       <div>
-        <h1>Contact Info</h1>
-        <p>Manage Your information</p>
+          <h1>Contact Info</h1>
+          <p>Manage Your information</p>
       </div>
       <div class="info-wrapper">
-        <div class="profile-wrapper">
-          <img
-            class="profile-img"
-            src="https://randomuser.me/api/portraits/men/1.jpg"
-            alt=""
-          />
-          <div>
-            <h1>Jhonson</h1>
-            <p>Jhonson@mail.com</p>
+          <div class="profile-wrapper">
+              <img class="profile-img" src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile Picture" id="mainProfileImage">
+              <div>
+                  <h1>Jhonson</h1>
+                  <p>Jhonson@mail.com</p>
+              </div>
+              <input type="file" id="photoUpload" style="display: none;" accept="image/*">
+              <button class="upload-btn"  onclick="document.getElementById('photoUpload').click()">Upload Photo</button>
           </div>
-          <button class="upload-btn">Upload Photo</button>
-        </div>
-        <div>
-          <form action="">
-            <div>
-              <label for="name">Name</label>
-              <input type="text" name="name" placeholder="Enter Name" id="" />
-            </div>
-            <div>
-              <label for="Email">Email</label>
-              <input type="text" name="" placeholder="Enter Email" id="" />
-            </div>
-          </form>
-        </div>
+          <div>
+              <form action="">
+                  <div>
+                      <label for="name">Name</label>
+                      <input type="text" name="name" placeholder="Enter Name" id="name">
+                  </div>
+                  <div>
+                      <label for="email">Email</label>
+                      <input type="text" name="email" placeholder="Enter Email" id="email">
+                  </div>
+              </form>
+              <button class="s-btn">Update</button>
+          </div>
       </div>
-    </section>
+  </section>
 
     <script>
       const sideLinks = document.querySelectorAll(".side-link");
@@ -327,6 +276,27 @@
           .querySelector(".save-btn")
           .addEventListener("click", saveClientInfo);
       });
+
+
+
+
+
+
+      document.getElementById('photoUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // Update all profile images
+                    document.getElementById('mainProfileImage').src = e.target.result;
+                    document.getElementById('headerProfileImage').src = e.target.result;
+                    document.getElementById('dropdownProfileImage').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select an image file.');
+            }
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   </body>

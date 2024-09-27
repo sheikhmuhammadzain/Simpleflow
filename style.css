@@ -446,9 +446,9 @@ input[type="date"] {
   background-color: var(--primary-color);
   color: #fff;
   border: none;
-  padding: 10px 30px;
-  font-weight: bold;
+  padding: 5px 30px;
   border-radius: 10px;
+  font-size: 0.7rem;
 }
 .scratch-para {
   background-color: var(--gray-color);
@@ -617,11 +617,15 @@ select {
   color: var(--primary-color);
   padding: 10px 30px;
   border-radius: 10px;
-  font-weight: bold;
   cursor: pointer;
   background-color: #fff;
+  font-style: italic;
 }
-
+.header-profile{
+height: 40px;
+width: 40px;
+border-radius: 50%;
+}
 
 .profile-img{
   height: 80px;
@@ -649,6 +653,12 @@ padding: 0 40px;
   align-items: center;
   justify-content: center;
   
+}
+form{
+  display: flex;
+  div{
+    flex: 1 ;
+  }
 }
 }
 .info-wrapper{
