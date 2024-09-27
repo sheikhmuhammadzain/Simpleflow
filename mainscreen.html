@@ -27,31 +27,36 @@
         padding-inline: 20px;
       
       }
-      .dropdown-toggle{
-        background-color: #fff;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 5px 10px;
-        border-radius: 100px ;
-      }
-      .dropdown-menu {
-        width: 250px;
-        padding: 15px;
-        border-radius: 10px;
-        background-color: white;
-      }
-      .dropdown-item {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .dropdown-item svg {
-        width: 1.2em;
-        height: 1.2em;
-      }
+      .dropdown-toggle::after {
+            display: none;
+        }
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .dropdown-menu {
+            width: 250px;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            color: #333;
+            transition: background-color 0.2s;
+        }
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }
+        .dropdown-item svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+        }
 
       .butn {
         border: none;
@@ -104,72 +109,42 @@
         <img src="logo.png" alt="" />
       </div>
 
-      <div class="dropdown">
-       
-        <button
-          class="dropdown-toggle"
-          type="button"
-          id="profileDropdown"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-        <img
-        src="https://randomuser.me/api/portraits/men/1.jpg"
-        alt=""
-        class="profile"
-      />
-        Jhonson
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-          <!-- Profile Info -->
-          <li class="text-center d-flex gap-2 ">
-            <img
-            src="https://randomuser.me/api/portraits/men/1.jpg"
-            alt=""
-            class="profile"
-          />
-         
-          <div class="d-flex flex-column justify-content-lg-start"><strong class="text-capitalize ">Jhonson <br></strong>
-            <small>Jhon@gmail.com</small></div>
-            
-            <hr />
-          </li>
-        
-          <!-- Options -->
-          <li>
-            <a class="dropdown-item" href="userDetail.html">
-              <!-- Icon for "Your details" -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 2c-1.885 0-5.333 1.16-5.333 2.833v.5h10.667v-.5C17.333 14.16 13.885 13 12 13z"
-                />
-              </svg>
-              Your details
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="index.html">
-              <!-- Icon for "Log out" -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  d="M10 9v6m4-3H7m7-6h2a2 2 0 012 2v10a2 2 0 01-2 2h-2m-4-2l-2-2m2 2l2-2m0-8L8 6"
-                />
-              </svg>
-              Log out
-            </a>
-          </li>
-        </ul>
-      </div>
+      <div class="">
+        <div class="dropdown d-flex justify-content-end">
+            <button class="btn btn-light dropdown-toggle d-flex align-items-center gap-2" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="profile-img">
+                <span>Jhonson</span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                <li class="mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="profile-img">
+                        <div>
+                            <strong class="d-block">Jhonson</strong>
+                            <small class="text-muted">jhon@gmail.com</small>
+                        </div>
+                    </div>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item" href="userDetail.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 2c-1.885 0-5.333 1.16-5.333 2.833v.5h10.667v-.5C17.333 14.16 13.885 13 12 13z" />
+                        </svg>
+                        Your details
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M10 9v6m4-3H7m7-6h2a2 2 0 012 2v10a2 2 0 01-2 2h-2m-4-2l-2-2m2 2l2-2m0-8L8 6" />
+                        </svg>
+                        Log out
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
     </header>
 <div class="side-overlay">
   <aside class="sidebar" >
