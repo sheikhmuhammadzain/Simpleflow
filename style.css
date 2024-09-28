@@ -134,6 +134,11 @@ left: 205;
 }
 .logo {
   width: 130px;
+  margin-left: 100px;
+  @media screen and (max-width: 600px) {
+    margin-left: 50px;
+    
+  }
 }
 .tick {
   height: 180px;

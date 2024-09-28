@@ -105,7 +105,7 @@
       <div class="menu-icon" onclick="toggleSidebar()">
         <i class="ri-menu-line menu-icon"></i>
       </div>
-      <div class="logo" style="margin-left: 100px;">
+      <div class="logo" style="">
         <img src="logo.png" alt="" />
       </div>
 
@@ -191,22 +191,19 @@
         </div>
         <div class="search-box">
           <i class="ri-search-line"></i>
-          <input type="search" placeholder="Search any keyword" />
+          <input class="form-control bg-body-tertiary border-0 mb-0" type="text" placeholder="search" aria-label="default input example">
         </div>
         <div class="or-divider">or</div>
         <h4>Client Name</h4>
-        <input type="text" id="ClientName" placeholder="Client name" />
+    
+        <input class="form-control" type="text" id="ClientName" placeholder="Client name" aria-label="default input example">
         <h4>Client DOB</h4>
-        <input
-          type="text"
-          id="ClientDOB"
-          placeholder="Enter DOB"
-          onfocus="(this.type='date')"
-          onblur="if(this.value==''){this.type='text'}"
-        />
+    
+        <input class="form-control" type="text"  id="ClientDOB" placeholder="10-05-2024" aria-label="default input example">
         <h4>Date</h4>
-        <input type="text" id="ClientDate" value="10-05-2024" />
-        <button class="save-btn" onclick="saveClientInfo()">Save</button>
+        
+        <input class="form-control" type="text" id="ClientDate" value="10-05-2024" aria-label="default input example">
+        <button class="s-btn w-100" onclick="saveClientInfo()">Save</button>
       </div>
     </div>
 
@@ -275,7 +272,7 @@
            
             <div class="search-box">
               <i class="ri-search-line"></i>
-              <input type="search" placeholder="Search any keyword" />
+              <input class="form-control bg-body-tertiary border-0 mb-0" type="text" placeholder="search" aria-label="default input example">
             </div>
           </div>
         </div>
@@ -435,9 +432,9 @@ sideLinks.forEach((link) => {
         <div><h3>Date</h3><p>${ClientDate}</p></div>
         <div><i class="ri-edit-2-line"></i></div>
       </div>
-      <div class="stop-listening" id="stop-listening" style="flex-direction: column" onClick="stopListening()">
+      <div class="stop-listening" id="stop-listening"  style="padding: 14px; flex-direction: column" onClick="stopListening()">
         <div></div>
-        <i class="ri-play-circle-line" style="font-size: 17px ;font-weight: 600" ></i>
+        <i class="ri-play-circle-line" style=" font-size: 25px; font-weight: 600" ></i>
         <h3 id="stop-btn">Start Listening</h3></div>
         
       </div>
@@ -452,9 +449,9 @@ sideLinks.forEach((link) => {
       // Function to display scratchpad content
       function displayScratchpadContent() {
         document.getElementById("para").innerHTML = `
-          <div class="border scratch-para">
-            <p>Details about the Client's conditions can be added here.</p>
-          </div>
+          
+              <textarea class="form-control mb-1 bg-body-tertiary" id="exampleFormControlTextarea1" rows="3"></textarea>
+          
           <div class="flex">
             <button class="s-btn submit-btn">Submit</button>
           </div>`;
