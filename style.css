@@ -140,6 +140,10 @@ left: 205;
     
   }
 }
+.vector-img{
+  margin-bottom: 9px;
+  font-weight: bold;
+}
 .tick {
   height: 180px;
   width: 180px;
