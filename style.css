@@ -696,3 +696,13 @@ form{
 
 
 
+.password-container {
+  position: relative;
+}
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
