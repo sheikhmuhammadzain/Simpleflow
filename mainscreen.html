@@ -199,10 +199,10 @@
         <input class="form-control" type="text" value="Abdullah" id="ClientName" placeholder="Client name" aria-label="default input example">
         <h4>Client DOB</h4>
     
-        <input class="form-control" type="text" value="10-05-2024"  id="ClientDOB" placeholder="10-05-2024" aria-label="default input example">
+        <input class="form-control" type="date" value="10-05-2024"  id="ClientDOB" placeholder="10-05-2024" aria-label="default input example">
         <h4>Date</h4>
         
-        <input class="form-control" type="text" id="ClientDate" value="10-05-2024" aria-label="default input example">
+        <input class="form-control" type="date" id="ClientDate" value="10-05-2024" aria-label="default input example">
         <button class="s-btn w-100" onclick="saveClientInfo()">Save</button>
       </div>
     </div>
@@ -396,7 +396,7 @@ sideLinks.forEach((link) => {
         <div><h3>Client Name</h3><p>${ClientName}</p></div>
         <div><h3>Client DOB</h3><p>${ClientDOB}</p></div>
         <div><h3>Date</h3><p>${ClientDate}</p></div>
-        <div><i class="ri-edit-2-line"></i></div>
+        <div><i class="ri-edit-2-line " onclick="toggleOverlay()"></i></div>
       </div>
       <div class="stop-listening" id="stop-listening" onClick="stopListening()">
         <div></div>
@@ -407,7 +407,7 @@ sideLinks.forEach((link) => {
     </section>`;
 
         // Close the overlay
-        closeOverlay();
+        closeOverlay(); 
       }
 
       // Function to stop listening
