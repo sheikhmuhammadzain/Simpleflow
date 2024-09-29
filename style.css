@@ -242,7 +242,6 @@ right: 332px;
 .search-box {
   display: flex;
   align-items: center;
-  gap: 20px;
   background-color: var(--gray-color);
   padding:0 10px;
   border: 1px solid #ddd;
@@ -338,9 +337,7 @@ input[type="date"] {
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
   justify-content: center;
-  h4 {
-    margin-bottom: 20px;
-  }
+
   .popup {
     position: absolute;
     top: 50%;
@@ -405,7 +402,7 @@ input[type="date"] {
     font-size: 13px;
   }
   button{
-    padding: 5px 20px;
+    padding: 10px 20px;
   }
   @media screen and (max-width: 652px) {
     gap: 10px;
