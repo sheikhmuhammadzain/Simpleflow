@@ -684,7 +684,7 @@ form{
   width: 65%;
   form{
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 10px;
   }
 }
